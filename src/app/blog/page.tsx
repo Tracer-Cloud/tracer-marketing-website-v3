@@ -29,24 +29,24 @@ export default async function BlogPage() {
     
     try {
       // Import the MDX file to get its exported metadata
-      const module = await import(`@/components/content/blog/${slug}.mdx`);
+      const postModule = await import(`@/components/content/blog/${slug}.mdx`);
       
       // Get metadata with defaults for required fields
       const metadata = {
-        title: module.metadata?.title || 'Untitled',
-        date: module.metadata?.date || new Date().toISOString(),
-        description: module.metadata?.description || '',
-        tag: module.metadata?.tag,
-        ogImage: module.metadata?.ogImage,
-        author: module.metadata?.author
+        title: postModule.metadata?.title || 'Untitled',
+        date: postModule.metadata?.date || new Date().toISOString(),
+        description: postModule.metadata?.description || '',
+        tag: postModule.metadata?.tag,
+        ogImage: postModule.metadata?.ogImage,
+        author: postModule.metadata?.author
       };
       
       return {
         slug,
         metadata,
       } as BlogPost;
-    } catch (error) {
-      console.error(`Error importing ${slug}.mdx:`, error);
+    } catch (importError) {
+      console.error(`Error importing ${slug}.mdx:`, importError);
       return null;
     }
   });
