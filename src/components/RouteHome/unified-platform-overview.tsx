@@ -1,0 +1,71 @@
+import PrimaryButton from "@/components/ui/primary-button";
+import Image from "next/image";
+import UnifiedPlatformCard from "./unified-platform-card";
+import UnifiedPlatformCardLg from "./unified-platform-card-lg";
+
+const UnifiedPlatformOverview = () => {
+  return (
+    <section>
+      <div className="mx-auto max-w-[1440px]">
+        <div className="pt-[88px] md:pt-16">
+          <div>
+            {/* heading part */}
+            <div className="space-y-6 px-4 md:space-y-12">
+              <div className="space-y-6">
+                <span
+                  className="font-chakra-petch text-sm font-normal uppercase leading-[19px] text-foreground md:text-base"
+                  style={{ letterSpacing: "-0.01em" }}
+                >
+                  _A Unified Platform
+                </span>
+                <div className="space-y-2 md:space-y-4">
+                  <h3
+                    className="max-w-[658px] font-britti-sans text-[32px] font-normal leading-[30px] text-foreground md:text-[56px] md:leading-[48px]"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    Observability for AI-driven Scientific Discovery
+                  </h3>
+                  <h6
+                    className="max-w-[500px] font-britti-sans text-base font-normal leading-4 text-foreground md:text-xl md:leading-[22px]"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    The nfrastructure that unifies science and engineering teams
+                    to power the next generation of AI driven breakthroughs
+                  </h6>
+                </div>
+              </div>
+              <div className="hidden sm:block">
+                <PrimaryButton title="Talk to an Expert" />
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="hidden lg:block">
+                <UnifiedPlatformCardLg />
+              </div>
+
+              <div className="lg:hidden">
+                <UnifiedPlatformCard />
+                <div className="relative h-[280px] w-full lg:hidden [@media(min-width:375px)]:h-[300px]">
+                  <Image
+                    src="/unified-bg-bottom-sm.png"
+                    alt="unified-bg-bottom"
+                    fill
+                    className=""
+                    priority
+                  />
+                </div>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-4 sm:hidden">
+                <PrimaryButton title="Talk to an Expert" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default UnifiedPlatformOverview;

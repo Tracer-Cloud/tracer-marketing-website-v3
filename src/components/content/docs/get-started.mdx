@@ -1,0 +1,52 @@
+---
+description: Follow the Quickstart to get started with Tracer in minutes before diving into the details.
+---
+
+import { Tabs, Tab, useConfig, Steps, Card, Cards } from "nextra-theme-docs";
+import { Frame } from "@/components/Frame";
+
+# Quickstart example
+
+Start monitoring and optimizing your pipelines in two steps
+
+<Steps>
+
+### Install Tracer by copying the following code snippet in your terminal:
+
+Replace `<YOUR_API>` with the API key you received after signing up:
+
+```bash
+#!/bin/bash
+curl -sSL https://setup.tracer.cloud | bash -s -- <YOUR_API_KEY> && . ~/.bashrc && tracer help
+```
+
+### Code snippet example:
+
+Copy the following snippet, save the file as "file_name.sh" and run it as a bash script in your terminal with "bash ./file_name.sh"
+
+```bash
+#!/bin/bash
+
+# start a new run
+tracer start
+
+# record the execution of a tool
+tracer tool helloworld_tool v1
+
+# Print "Hello World"
+echo "Hello World"
+
+# Log anything such as the script progress
+tracer log "you are halfway the script"
+
+# record the execution of another tool
+tracer tool welcome v1
+
+# Print a message to the command line
+echo "This was the Tracer quickstart!"
+
+# Mark the end of a pipeline run
+tracer end
+```
+
+</Steps>

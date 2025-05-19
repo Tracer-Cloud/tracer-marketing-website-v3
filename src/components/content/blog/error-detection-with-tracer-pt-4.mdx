@@ -1,0 +1,91 @@
+---
+title: "Observability For Biology (Part 4)"
+date: 2024/07/26
+description: In this blog post, we used Tracer & its metrics to identify a common error type and its source in data analysis.
+tag: announcement
+ogImage: /images/tracer-blog-4.png
+author: Vincent, Laura and Tushar
+---
+
+import { BlogHeader } from "@/components/blog/BlogHeader";
+
+<BlogHeader
+  title="Observability For Biology - Error Detection (Part 4)"
+  description="Error Detection with Tracer"
+  date="July 26, 2024"
+  authors={["vincenthus", "tusharwarrier", "laurabogaert"]}
+/>
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/tracer-blog-4.png)
+</Frame>
+
+## Summary
+
+| **Summary Points**                                                                                                  |
+|---------------------------------------------------------------------------------------------------------------------|
+| Tracer is able to assess and pin-point errors in tools involved in ChIP-Seq analysis.                               |
+| Use of an incorrect genome file disrupts the creation of a complete genome index.                                   |
+| The time taken for the STAR-index process drops off by 75% due to a premature termination of the process.           |
+| STAR-align or mapping falls by 99.9%, suggesting a complete failure of the STAR mapper.                             |
+| Tracer correctly identifies the error source as missing files within the genome index directory.                    |
+
+Following on from our previous experiment, we next implemented the practical application of Tracer in detecting errors and identifying error types & causes in routine genomic data analysis. Join us in this journey of using Tracer to pin-point errors in bioinformatics analyses & making research more efficient!
+
+## ERROR TYPE 
+
+We used the Tracer platform to run a human ChIP-Seq dataset for mapping, indexing and peak-calling while using an incorrect genome assembly from the wrong species (mouse), in order to assess whether the Tracer metrics could identify any errors that occur as a result. 
+
+## EXPERIMENT 
+
+- We used a public ChIP-Sequencing dataset from [GEO](https://www.ncbi.nlm.nih.gov/sra?term=SRX23858050) and analysed it using a normal CHIPSEQ analysis pipeline (CHIPSEQ-CASE1 - where the correct human genome assembly file was used), as well as an aberrant CHIPSEQ pipeline (CHIPSEQ-CASE1 - where the mouse genome assembly was used).
+
+- The human GTF file was used along with mouse genome for the genome index generation for both pipelines. 
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/chipseq-case1.png)
+</Frame>
+
+---
+
+## OBSERVATIONS
+
+- Incompatibility of the mouse FASTA from the genome assembly with the human GTF led to the failure in generating the 'genomeParameters.txt' file.
+- The STAR mapper is constrained by this incompatibility. (STAR might forcefully generate the file with more RAM, but this scenario wasn't tested)
+- Despite the failures in STAR index and mapping processes, the overall pipeline continues. Execution of each tool is attempted, as recorded by Tracer. Time and CPU usage are still recorded even with parametric or tool-related errors.
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/process-times.png)
+</Frame>
+
+---
+
+## Can Bioinformaticians spot where the errors have happened using Tracer?
+
+The short answer is YES!
+
+The time taken by each tool in the two workflows (CHIPSEQ-NORMAL vs CHIPSEQ-CASE1) shows significant differences. For this particular experiment, we compared the time-taken for FastQC, STAR-index, STAR-align, samtools, MACS3, and plotCoverage, between the two runs:
+
+    - FastQC: Similar times in both cases.
+    - STAR-index: Significant reduction in time for CHIPSEQ-CASE1 (There is a decrease of ~75% in the time-taken for indexing in CHIPSEQ-CASE1!!)
+    - STAR-align: Drastic reduction in time for CHIPSEQ-CASE1 (There is a decrease of ~99.9% in the time-taken for indexing in CHIPSEQ-CASE1!!)
+    - Samtools, MACS3: Minimal differences are seen.
+    - plotCoverage: Significant reduction in time for CHIPSEQ-CASE1 [This tool relies directly on the BAM output of STAR-align and therefore shows much lower time-scales in the CHIPSEQ-CASE1 which has a flawed mapping process]
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/heatmap-error-detection.png)
+</Frame>
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/flow-type-case1.png)
+</Frame>
+
+---
+
+## What did we use for this Observability experiment?
+
+1. GitPod [4 cores, 16 GB RAM]
+2. Tracer (Always!)
+
+
+For further discussions or feedback, please [join our Slack channel](https://join.slack.com/t/tracer-je58497/shared_invite/zt-2oxsayefl-gXrt8VlRAt0xbOURM8DUwQ) or stay tuned for our upcoming blog posts. We look forward to seeing you there!

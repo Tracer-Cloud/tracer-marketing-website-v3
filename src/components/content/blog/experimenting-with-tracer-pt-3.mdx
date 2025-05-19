@@ -1,0 +1,93 @@
+---
+title: "Observability For Biology (Part 3)"
+date: 2024/06/12
+description: In this blog post, we used Tracer for real-time analytical insights into ChIP-Seq data.
+tag: announcement
+ogImage: /images/tracer-blog-3.png
+author: Vincent, Laura and Tushar
+---
+
+import { BlogHeader } from "@/components/blog/BlogHeader";
+
+<BlogHeader
+  title="Observability For Biology - The Experiment (Part 3)"
+  description="Real-Time Pipeline Monitoring Experiment"
+  date="June 12, 2024"
+  authors={["vincenthus", "tusharwarrier", "laurabogaert"]}
+/>
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/tracer-blog-3.png)
+</Frame>
+
+## Summary
+
+| **Summary Points**                                                                                                  |
+|---------------------------------------------------------------------------------------------------------------------|
+| Tracer provides real-time insights into ChIP-Seq data analysis.                                                     |
+| Data size gradients allow 'thresholding' of data-sizes and tools with Tracer.                                       |
+| Different mapping & indexing tools (bowtie2 vs STAR) are compared for the same datasets.                            |
+| Tracer clearly highlights differences in runtime and data-size thresholds for the two pipelines.                    |
+| bowtie2 is able to index & map larger data-sizes as compared to the STAR mapper.                                    |
+
+In this post, we want to showcase the practical value of our software monitoring tool, Tracer, specifically designed for biology software. And what better way to demonstrate the scientific impact of Tracer than through an experiment? Let's explore how Tracer revolutionizes the monitoring and optimization of bioinformatics workflows, driving advancements in biological research and discovery.
+
+We used the Tracer platform to run a simple three-step experiment with the aim of gaining real-time insights into performance analytics of bioinformatics pipelines & tools. So let’s jump right into the three different steps of our experiment:
+
+## The Experiment
+
+<b>Step 1</b>: To get started we obtained a public [ChIP-Sequencing](https://emea.illumina.com/techniques/sequencing/dna-sequencing/chip-seq.html) dataset from [GEO](https://www.ncbi.nlm.nih.gov/sra?term=SRX23858050) and fragmented the same into different sizes to yield a gradient. 
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/data-gradient.png)
+</Frame>
+
+<b>Step 2</b>: Next, two ChIP-Seq analysis pipelines (P1 & P2) were formulated for Quality Control, Genome Indexing, Alignment and Quantification of the peaks detected in the dataset. 
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/pipelines.png)
+</Frame>
+
+<b>Step 3</b>: Our Tracer app was able to log the pipeline runs in order to detect and compare the total runtimes for P1 and P2. In the graphs below, data-size and corresponding runtimes are plotted.
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/p1-time.png)
+</Frame> 
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/p2-time.png)
+</Frame> 
+
+The 'inflection points' on the curves indicate the most drastic increment in time observed for each pipeline analysis. Using this information, Tracer calculates the data-size thresholds corresponding to those inflection points.
+
+---
+
+## What Tracer Tells Us
+
+- Pipeline 1 reaches a saturation and drastically increases in runtime at a threshold data size of 1610.6 MB.
+
+- In comparison, Pipeline 2 reaches a similar saturation at a much higher threshold data size of 4831.84 MB.
+
+- Pipeline 1, which uses STAR mapping and indexing, has much longer runtimes and a much lower data-size treshold as compared to Pipeline 2. 
+
+- To optimally allocate our computational resources, we should build a pipeline similar to Pipeline 2 .
+
+---
+
+## What does this mean for Computational Biologists?
+
+This little experiment illustrates how Tracer’s intricate observability system can classify and compare pipeline runs. By giving biologists a detailed assessment of the tools and pipelines used, these can be tailored and optimised for time and available resources. 
+
+Through constant monitoring, Tracer not only reports the different processes and tools that are running as a part of the analyses, but also records and allows comparison of different runs.
+
+Having access to this information, allows bioinformaticians across industry & academia to optimally allocate computational resources and build pipelines with the correct choice of tools!   
+
+---
+
+## What did we use for this Observability experiment?
+
+1. Linux Ubuntu 22.04 [4 cores, 64 GB RAM]
+2. The ever-reliable Tracer!
+
+
+For further discussions or feedback, please [join our Slack channel](https://join.slack.com/t/tracer-je58497/shared_invite/zt-2oxsayefl-gXrt8VlRAt0xbOURM8DUwQ) or stay tuned for our upcoming blog posts. We look forward to seeing you there!

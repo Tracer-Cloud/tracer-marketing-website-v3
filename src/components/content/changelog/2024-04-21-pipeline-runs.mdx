@@ -1,0 +1,23 @@
+---
+date: 2024-04-21
+title: Pipeline Runs and 1-line-of-code Integration
+description: We've added a new feature to Tracer that allows you to view individual pipeline runs better
+author: Vincent
+ogImage: /images/changelog/tracer/2024-04-21-pipeline-runs.png
+---
+
+import { ChangelogHeader } from "@/components/changelog/ChangelogHeader";
+
+<ChangelogHeader />
+
+## Release v0.0.4 on April 21st - Individual Pipeline Runs and 1-line-of-code Integration
+
+- Once you click on a pipeline you will see a list of all the runs for that pipeline
+- Previously it was only possible to see aggregrate data for all pipeline runs, but now you can drill down into the details of each run
+- We've also added a one line of code integration method. If you go to the setup page to create a new API key, you can copy the code snippet and paste it into your terminal to start sending data to Tracer
+
+### What's Next?
+
+- We're working on a client library that will make it possible to send results from your pipeline runs to Tracer
+- We're also working on an improved division of metrics between all pipeline runs, individual runs and tools
+- Based on user conversations we're thinking about introducing more governance features, such as the ability to organize pipelines into projects and team workspaces

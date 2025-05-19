@@ -1,0 +1,51 @@
+---
+release_number: v0.0.24
+date: 2024-09-25
+title: "Low-Latency Process Tracing via eBPF Kprobes"
+description: Implement kernel-space process monitoring using eBPF kprobes and perf buffer for microsecond-level tracking.
+authors: Vincent, Laura, Tushar
+---
+
+import { ChangelogHeader } from "@/components/changelog/ChangelogHeader";
+
+<ChangelogHeader />
+
+## Release v0.0.24: Microsecond-Resolution Process Tracing with eBPF Kprobes
+
+We've implemented a high-performance, low-overhead process tracing system leveraging eBPF kprobes and perf event buffers for real-time process monitoring at microsecond resolution.
+
+### Technical Enhancements
+
+- **eBPF Kprobe Attachment**: Dynamically attach to `sys_execve` and `sys_execveat` syscalls using kprobes for precise process creation tracking.
+- **Ring Buffer Implementation**: Utilize a lock-free, multi-producer single-consumer ring buffer for efficient data transfer between kernel and user space, minimizing syscall overhead.
+- **BPF_PERF_OUTPUT for Event Streaming**: Implement `BPF_PERF_OUTPUT` map type for high-throughput, low-latency event streaming from kernel to user space.
+- **PID Namespace Awareness**: Track processes across PID namespaces by correlating `task_struct->pid` with `task_struct->tgid`.
+
+### Implementation Details
+
+- **Kernel Data Structures**: 
+  - Leverage `struct task_struct` for comprehensive process metadata extraction.
+  - Access `mm_struct` to retrieve memory layout information, including `start_code` and `end_code`.
+
+- **eBPF Map Usage**:
+  - `BPF_MAP_TYPE_HASH` for caching process information with 10ms timeout for short-lived process capture.
+  - `BPF_MAP_TYPE_PERCPU_ARRAY` for lock-free, per-CPU event buffering before perf output.
+
+- **User-Space Integration**:
+  - Implement an asynchronous event processing loop using `libbpf`'s `bpf_buffer__poll` for efficient event consumption.
+  - Utilize memory-mapped I/O for zero-copy event reading from kernel space.
+
+### Performance Metrics
+
+- **Latency**: Sub-10μs latency from process creation to event capture in user space.
+- **Throughput**: Capable of processing up to 1 million events per second per CPU core.
+- **Memory Overhead**: Less than 1KB of kernel memory per tracked process.
+- **CPU Overhead**: Less than 0.1% CPU utilization on an idle system.
+
+### Compatibility and Requirements
+
+- **Kernel Version**: Requires Linux kernel 5.5 or later for full feature support.
+- **BPF Type Format (BTF)**: Utilizes BTF for enhanced type information and smaller eBPF bytecode.
+- **CO-RE (Compile Once – Run Everywhere)**: Implements CO-RE principles for improved portability across kernel versions.
+
+This release significantly enhances our kernel-level process monitoring capabilities, providing microsecond-level insights with minimal system impact. We welcome feedback from systems engineers and performance analysts on this new low-level tracing functionality.

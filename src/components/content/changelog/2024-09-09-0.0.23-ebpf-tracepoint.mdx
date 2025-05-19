@@ -1,0 +1,32 @@
+---
+release_number: v0.0.22
+date: 2024-09-09
+title: "Kernel-level System Monitoring via eBPF Tracepoint Integration"
+description: Implement syscall tracing with eBPF for low-overhead, high-fidelity system analysis.
+authors: Vincent, Laura, Tushar
+---
+
+import { ChangelogHeader } from "@/components/changelog/ChangelogHeader";
+
+<ChangelogHeader />
+
+## Release v0.0.23: eBPF Tracepoint Integration for improved Kernel-level System Monitoring
+
+We are thrilled to announce the integration of an improved eBPF program integration into our platform, enabling kernel-level tracing to enhance your system monitoring capabilities.
+
+### New Features
+
+- **eBPF Program Integration**: Seamlessly load and run eBPF programs directly from our Rust-based daemon for deep system insights.
+- **Syscall Tracing**: Gain real-time visibility into process creation by tracing the `execve` syscall.
+- **Efficient Multi-CPU Event Handling**: Process eBPF events across multiple CPUs for optimal performance.
+- **Granular Process Insights**: Capture and analyze short-lived processes that might be missed by traditional polling methods.
+
+### Benefits
+
+- Deeper visibility into system behavior with kernel-level insights
+- Reduced monitoring overhead on your systems
+- Real-time notifications about new process executions
+- Improved security monitoring with immediate process creation alerts
+- Enhanced performance analysis capabilities
+
+We can't wait to hear your thoughts on this powerful new integration. Happy monitoring!

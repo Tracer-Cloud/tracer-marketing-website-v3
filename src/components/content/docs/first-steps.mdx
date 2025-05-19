@@ -1,0 +1,73 @@
+---
+description: Follow the Quickstart to get started with Tracer in minutes before diving into the details.
+---
+
+import { Tabs, Tab, useConfig, Steps, Card, Cards } from "nextra-theme-docs";
+import { Frame } from "@/components/Frame";
+
+# First Steps
+
+### Start monitoring your pipelines immediately with Tracer.
+
+Watch this video and launch Tracer in seconds after signing up here: [app.tracer.com](https://app.tracer.com)
+
+<div
+  style={{
+    position: "relative",
+    paddingBottom: "calc(57.458333333333336% + 42px)",
+    height: 0,
+  }}
+>
+  <iframe
+    src="https://app.supademo.com/embed/clwfgcy1s04khk912dmjdo72m"
+    title="Tracer set up new pipeline"
+    allow="clipboard-write"
+    frameBorder="0"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  />
+</div>
+
+## Step by step instructions
+
+<Steps>
+
+### Sign up on [app.tracer.cloud](http://app.tracer.cloud) with Github or Google
+
+### Copy the one-line integration into your terminal.
+
+You can connect to the Tracer platform using one line copied into your terminal.
+
+```bash
+curl -sSL https://setup.tracer.cloud | bash -s -- <YOUR_API_KEY> && . ~/.bashrc && tracer help
+```
+
+_One line of code - don't forget to update the API key first!_
+
+#### 2.1 How to find your API key?
+
+Your first API key will be automatically generated when you follow the sign up steps.
+You can connect other pipelines following the instructions in the  ["Connecting more Pipelines"](/docs/MoreAPIs) tab.
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/Tracer-signup-copy.png)
+</Frame>
+
+### Get started!
+
+Once connected, you will see some confetti (literally!) and have a green light next to the 'connection status'.
+Click on "Proceed" and you are ready to use Tracer!
+
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/Tracer-signup-confetti.png)
+</Frame>
+
+</Steps>

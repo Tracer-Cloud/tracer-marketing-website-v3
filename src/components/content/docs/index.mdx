@@ -1,0 +1,41 @@
+---
+description: Introduction to Tracer with quickstart instructions, tutorials, and more.
+---
+
+import { ProductUpdateSignup } from "@/components/productUpdateSignup";
+import { Tabs, Tab, useConfig, Steps, Card, Cards } from "nextra-theme-docs";
+import { Frame } from "@/components/Frame";
+
+# Introduction
+
+Tracer is the computational biology monitoring platform that boosts productivity with intelligent logging wrappers to diagnose issues, optimize pipeline costs and speed up computations.
+
+Set up Tracer in 4 clicks, then quickly iterate on your workflows with the confidence that your pipelines and data are safeguarded by a reliable error monitoring system.
+
+## Use cases
+
+- **Pipeline Health Monitoring**: <br/>
+  Get real-time visiblity in the health of all your pipelines, regardless of programming language or operating system, through a single, integrated dashboard
+
+- **Cost & Performance Analytics**: <br/>Create cost and performance reports across tools, pipeline runs, teams, and projects within a unified data lake for bioinformatics DevOps
+
+- **Advanced Error Traceability**: <br/>Gain insights into the number of runs, failure rates, and failure modes for all your pipelines by matching errors to a comprehensive error database
+
+## How does Tracer work?
+
+We recommend you read the following sections in this order if you are a first-time user of Tracer:
+
+1. Learn about [Runs](/docs/pipelines-and-runs), Tracer's basic unit of computation.
+2. Create and track pipelines with [Pipelines](/docs/pipelines-and-runs)
+3. Identify computational bottlenecks per tool with [Metrics](/docs/pipelines-and-runs)
+4. Learn about Tracer commands with [Bash](/docs/shell-bash.mdx) or [Nextflow](/docs/nextflow) examples
+5. Learn about visualising your pipelines with [Flowsheets](/docs/pipelines-and-runs)
+
+## System requirements (as of May 14th 2024)
+
+Tracer is still in alpha and is only available for the following operating systems:
+
+- Linux Ubuntu 22.04 LTS: Recommended platform for optimal performance
+- Linux (General): Other Linux distributions are also supported
+- macOS: Supported, but with limited metrics functionality
+- Windows: Please contact us, we have a compiled binary for Windows, but it is not officially supported

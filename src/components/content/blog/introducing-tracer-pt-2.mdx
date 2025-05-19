@@ -1,0 +1,86 @@
+---
+title: "Observability For Biology (Part 2)"
+date: 2024/05/26
+description: In this blog post, we discuss the importance of observability in biology.
+tag: announcement
+ogImage: /images/tracer-blog-part-2.png
+author: Vincent, Laura and Tushar
+---
+
+import { BlogHeader } from "@/components/blog/BlogHeader";
+import { RedditEmbed } from "@/components/RedditEmbed";
+
+<BlogHeader
+  title="Observability For Biology (Part 2)"
+  description=""
+  date="May 27, 2024"
+  authors={["vincenthus", "tusharwarrier", "laurabogaert"]}
+/>
+<Frame fullWidth className="mb-12">
+  ![Tracer](/images/tracer-blog-part-2.png)
+</Frame>
+
+Our industry is experiencing rapid transformation as millions of scientists leverage computational biology to accelerate and reduce the cost of lifescience research. This leads to biology software packages becoming more popular every day. For example, AlphaFold (an AI program that predicts protein structures) has been utilized by over [1.4 million researchers](https://deepmind.google/impact/meet-the-scientists-using-alphafold/). Last year, Bioconductor (software that analyzes genomic data in wet lab experiments) was used by more than [1 million scientists](https://www.bioconductor.org/packages/stats/bioc/index.html), and the amount of downloads has already increased by [39% this year](https://www.bioconductor.org/packages/stats/bioc/index.html).
+
+Tools like these have become essential for diagnostics and the development of new medicines.
+
+However, these benefits of digital science come at a cost: there is an explosion of operational software complexity.
+
+---
+## Software complexity sparks hard-to-solve questions
+
+During our discussions with market experts and computational biology practitioners, but also looking at our own experiences, we’ve learned some key questions that are being constantly asked by computational biology teams:
+
+“Which genome file and tool process caused our computation to crash?”
+
+“How can we safely update our dependencies without (again) risking weeks of FTE downtime?”
+
+"Did we correctly size the memory on this machine?"
+
+"Are we sure that our computational pipelines are working as we think they are?"
+
+## Observability as the answer
+
+Software monitoring practices, also referred to as observability, are the answer to these questions. In simple terms, observability is the ability to assess a system’s current state based on the data it produces.
+
+When first learning how to code, we usually perform software monitoring by only observing the print statements. However, most of us soon realize that software monitoring becomes much more relevant when using bioinformatics tooling in our workflows.
+
+```javascript
+[sort_core] merging from 4 files and 8 in-memory blocks...
+[sort_core] merging from 4 files and 8 in-memory blocks...
+EXITING because of FATAL ERROR: cannot insert junctions on the fly because of strand problem
+```
+
+As the people in our community on Biostars, Github or Reddit can agree, these message logs are difficult to understand.
+
+<br />
+
+<RedditEmbed />
+
+## Observability should be tailor-made to biology
+
+To tackle this confusion, we need software monitoring solutions that are especially tailored to the world of biology. In this way, our observability tools can provide a meaningful error context despite limited information.
+
+By building biology-aware logging wrappers and an error database, Tracer can serve as this specialized software monitoring tool. It can thereby understand if our software is working well and, more importantly, how to make it better. 
+
+## What makes an observability tool accessible and effective?
+
+Additionally, through extensive iterations with biotech industry leaders and computational biology teams, we have identified the following architectural requirements for such a solution:
+
+1. Compatibility
+The software monitoring solution must support any programming language, framework, cloud, or operating environment, given the diversity of standards and the rapid pace of development in our field.
+
+2. Compliance and Security
+The solution must adhere to stringent healthcare compliance and security standards and be easily deployable within existing IT infrastructure.
+
+3. Ease of Use
+The solution must be exceptionally easy to use, accommodating a new class of scientist software developers who may not have extensive programming experience.
+
+4. Ease of Deployment
+Effective monitoring software for biology should be versatile, operable across different systems, and installable with minimal effort, ideally with a single line of code.
+
+Now, it is clear that effective observability tools can revolutionize computational biology by understanding its increasingly complex software. Tracer is designed to conquer this challenge head-on, delivering powerful and user-friendly software that drives innovation and efficiency in the field.
+
+---
+
+For further discussions or feedback, please [join our Slack channel](https://join.slack.com/t/tracer-je58497/shared_invite/zt-2oxsayefl-gXrt8VlRAt0xbOURM8DUwQ) or stay tuned for our upcoming blog posts. We look forward to seeing you there!

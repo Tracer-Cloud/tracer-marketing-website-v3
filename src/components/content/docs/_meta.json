@@ -1,0 +1,20 @@
+{
+  "index": "What is Tracer?",
+  "first-steps": "First Steps",
+  "get-started": "Quickstart",
+  "cli": "Tracer's commands",
+  "MoreAPIs": "Connecting more Pipelines",
+  "-- Integrations": {
+    "type": "separator",
+    "title": "Example"
+  },
+  "shell-bash": "Shell script (Bash) example",
+  "-- Features": {
+    "type": "separator",
+    "title": "Features"
+  },
+  "pipelines-and-runs": "Pipelines and Runs",
+  "metrics": "Metrics",
+  "logging": "Logging",
+  "open-source": "Open Source"
+}

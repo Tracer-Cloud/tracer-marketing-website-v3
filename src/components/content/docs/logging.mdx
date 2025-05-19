@@ -1,0 +1,41 @@
+---
+description: Introduction to Tracer with quickstart instructions, tutorials, and more.
+---
+
+import { Tabs, Tab, useConfig, Steps, Card, Cards } from "nextra-theme-docs";
+
+# Logging
+
+Use Tracer to log data from runs, such as tools, results parameter flags or pipeline progress.
+
+The most basic usage is: $tracer log "message" and you can use it to log any message you want to record the results of your pipelines:
+
+<Steps>
+
+### Example: Quality of alignment
+
+Quality of Alignment: After running STAR, it's crucial to log the quality of the alignment. This could include metrics like the percentage of uniquely mapped reads, which is a key indicator of the success of the alignment process.
+
+```bash
+# Extract alignment statistics from the STAR log output
+ALIGNMENT_STATS=$(grep "Uniquely mapped reads %" "${OUTPUT_DIR}/sample_Log.final.out")
+# Log the percentage of uniquely mapped reads
+tracer log "Alignment quality for sample_1: ${ALIGNMENT_STATS}"
+```
+
+### Example: Read Counting Summary
+
+```bash
+# Extract the total number of successfully assigned reads from featureCounts output
+TOTAL_COUNTS=$(grep "Assigned" "${OUTPUT_DIR}/counts.txt.summary")
+# Log the total number of reads assigned to features
+tracer log "Read counting summary for sample_1: ${TOTAL_COUNTS}"
+```
+
+### Keep track of results in the UI
+
+<br />
+<br />
+
+<img src="/tracer-alignment-results.png" />
+</Steps>

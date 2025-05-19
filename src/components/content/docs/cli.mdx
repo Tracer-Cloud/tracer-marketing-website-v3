@@ -1,0 +1,70 @@
+---
+description: How to use Tracer
+---
+
+import { ProductUpdateSignup } from "@/components/productUpdateSignup";
+import { Tabs, Tab, useConfig, Steps, Card, Cards } from "nextra-theme-docs";
+import { Frame } from "@/components/Frame";
+
+## How to use Tracer's shell script commands as part of your workflow
+
+Tracer has a number of CLI (command line interface) commands which are used to track and monitor in real time different metadata such as packages or tools in your bioinformatics pipelines
+{/* Built with Rust, you can easily install it in your terminal using our open-source installation script, available during signup. */}
+
+<Steps>
+
+### Label a new run with `tracer start`
+
+This command indicates the start of a new run. Copy it into your script below the shebang.
+
+```bash
+tracer start
+```
+
+### Label the start of a tool with `tracer tool`
+
+Before you start a tool (e.g., STAR, bam), use the `tracer tool` command. This way, the platform can start recording the computational usage of this tool. The `tracer tool` command can be copied into the script as many times as you want.
+
+The `tracer tool` command expects a name under `XX` and a version of the tool under `YY`. An example is:
+
+```bash
+tracer tool STAR v2.7.2
+```
+
+You can write whatever you find suitable for the name and version.
+
+### Log customized messages with `tracer log`
+
+On top of recording the start and stop of your tools, Tracer is also able to generate messages or 'logs' while your pipeline is running with the `tracer log` command. Tracer allows for whatever message you want, which will be displayed under the flowsheet of your run and in your terminal.
+
+An example of this could be:
+
+```bash
+tracer log "The pipeline has finished tool 3 out of 5"
+```
+
+The `tracer log` command can be copied into the script as many times as you like or not at all.
+
+### End the run with `tracer end`
+
+At the end of the script, it is important to write the `tracer end` command. This signals the end of the run and stops the tracking of computational usage of the run and tools.
+
+If you forget to write the end command, don’t worry, as the Tracer platform will automatically start a new run once it sees the `tracer start` again.
+
+### Check all commands with `tracer help`
+
+You can find the list of tools by copying the command below into your terminal:
+
+```bash
+tracer help
+```
+
+The command will give you the following output:
+
+<img
+  src="/tracer-help-command.png"
+  alt="Screenshot 2024-05-01 at 9.42.14"
+  className="w-[66%] h-auto object-cover mt-8 object-[center_-20px]"
+/>
+
+</Steps>
