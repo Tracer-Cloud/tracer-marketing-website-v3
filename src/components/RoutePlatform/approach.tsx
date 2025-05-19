@@ -15,7 +15,7 @@ const Approach = () => {
                 </div>
                 <div className='grid 900:grid-cols-3 bg-white min-h-[251px] w-full gap-4 md:gap-6'>
                     <div className='border border-[#E8E8E8] p-4 flex flex-col gap-8 md:gap-[46px] items-start justify-between'>
-                        <Image src={"/icons/setting-icon.svg"} alt='setting-icon' width={65} height={65} className='shrink-0 aspect-square w-full max-w-[40px] sm:max-w-[56px]' />
+                        <Image src={"/platform/icons/setting-icon.svg"} alt='setting-icon' width={65} height={65} className='shrink-0 aspect-square w-full max-w-[40px] sm:max-w-[56px]' />
                         <div className=''>
                             <h3 className='text-c-black font-[400] font-britti-sans text-[24px] md:text-[40px] leading-[1.1]'>
                                 New Opportunities
@@ -26,7 +26,7 @@ const Approach = () => {
                         </div>
                     </div>
                     <div className='border border-[#E8E8E8] p-4 flex flex-col gap-8 md:gap-[46px] items-start justify-between'>
-                        <Image src={"/icons/currency-dollar.svg"} alt='currency-dollar' width={65} height={65} className='shrink-0 aspect-square w-full max-w-[40px] sm:max-w-[56px]' />
+                        <Image src={"/platform/icons/currency-dollar.svg"} alt='currency-dollar' width={65} height={65} className='shrink-0 aspect-square w-full max-w-[40px] sm:max-w-[56px]' />
                         <div className=''>
                             <h3 className='text-c-black font-[400] text-[24px] font-britti-sans md:text-[40px] leading-[1.1]'>
                                 New Costs
@@ -37,7 +37,7 @@ const Approach = () => {
                         </div>
                     </div>
                     <div className='border border-[#E8E8E8] p-4 flex flex-col gap-8 md:gap-[46px] items-start justify-between'>
-                        <Image src={"/icons/arrows-pointing-out.svg"} alt='arrows-pointing-out' width={65} height={65} className='shrink-0 aspect-square w-full max-w-[40px] sm:max-w-[56px]' />
+                        <Image src={"/platform/icons/arrows-pointing-out.svg"} alt='arrows-pointing-out' width={65} height={65} className='shrink-0 aspect-square w-full max-w-[40px] sm:max-w-[56px]' />
                         <div className=''>
                             <h3 className='text-c-black font-[400] font-britti-sans text-[24px] md:text-[40px] leading-[1.1]'>
                                 New Scale

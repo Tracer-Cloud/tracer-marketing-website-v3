@@ -6,8 +6,8 @@ const Hero = () => {
         <div className='bg-white overflow-hidden'>
 
             <div className='w-full grid relative grid-cols-1 1000:grid-cols-[0.52fr_1fr] grid-rows-[290px_auto] 1000:grid-rows-[380px_187px_auto] mx-auto '>
-                <Image src={"/hero-bg.webp"} alt='hero-bg.png' width={800} height={567} className='w-full animate-pulse max-sm:hidden max-w-[480px] sm:max-w-[480px] 1000:max-w-[775px] aspect-[775/567] absolute top-0 left-0' />
-                <Image src={"/hero-bg.webp"} alt='hero-bg.png' width={800} height={567} className='w-full sm:hidden animate-pulse max-w-[400px] 400:translate-x-0 -translate-x-14 min-w-[400px] 500:max-w-[400px] aspect-[775/567] absolute top-0 left-0' />
+                <Image src={"/platform/hero-bg.webp"} alt='hero-bg.png' width={800} height={567} className='w-full animate-pulse max-sm:hidden max-w-[480px] sm:max-w-[480px] 1000:max-w-[775px] aspect-[775/567] absolute top-0 left-0' />
+                <Image src={"/platform/hero-bg.webp"} alt='hero-bg.png' width={800} height={567} className='w-full sm:hidden animate-pulse max-w-[400px] 400:translate-x-0 -translate-x-14 min-w-[400px] 500:max-w-[400px] aspect-[775/567] absolute top-0 left-0' />
                 <div className='w-[80px] h-[62px] bg-white 1000:hidden z-[50] absolute right-0 top-[230px]'>
 
                 </div>

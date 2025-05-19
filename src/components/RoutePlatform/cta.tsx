@@ -20,7 +20,7 @@ const Cta = () => {
             <div className='w-full relative h-[200px] sm:h-[330px]'>
                 <div className='bg-[#FCFCFC] h-[45px] sm:h-[54px] w-[112px] sm:w-[458px] absolute top-0 right-0' />
 
-                <Image src={"/car.webp"} alt='car' width={1500} height={400} className='w-full h-full object-cover' />
+                <Image src={"/platform/car.webp"} alt='car' width={1500} height={400} className='w-full h-full object-cover' />
             </div>
         </div>
     )

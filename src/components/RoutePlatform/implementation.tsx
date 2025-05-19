@@ -32,24 +32,24 @@ const Implementation = () => {
                     <div className='lg:flex hidden' />
                     <div className='lg:flex hidden' />
                     <div className='aspect-square border border-[#E8E8E8] bg-[#FCFCFC] flex items-center justify-center'>
-                        <Image src={"/bash.svg"} alt='bash' width={200} height={80} className='w-full max-w-[59px] md:max-w-[111px]' />
+                        <Image src={"/platform/bash.svg"} alt='bash' width={200} height={80} className='w-full max-w-[59px] md:max-w-[111px]' />
                     </div>
                     <div className='aspect-square border border-[#E8E8E8] bg-[#FCFCFC] flex items-center justify-center'>
-                        <Image src={"/box-split.svg"} alt='box-split' width={200} height={80} className='w-full max-w-[47px] md:max-w-[76px]' />
+                        <Image src={"/platform/box-split.svg"} alt='box-split' width={200} height={80} className='w-full max-w-[47px] md:max-w-[76px]' />
                     </div>
                     <div className='aspect-square border border-[#E8E8E8] bg-[#FCFCFC] flex items-center justify-center'>
-                        <Image src={"/air-flow.svg"} alt='air-flow' width={200} height={80} className='w-full max-w-[59px] md:max-w-[126px]' />
+                        <Image src={"/platform/air-flow.svg"} alt='air-flow' width={200} height={80} className='w-full max-w-[59px] md:max-w-[126px]' />
                     </div>
                     <div className='aspect-square border border-[#E8E8E8] bg-[#FCFCFC] flex items-center justify-center'>
-                        <Image src={"/aws-sv.svg"} alt='aws-sv' width={200} height={80} className='w-full max-w-[45px] md:max-w-[88px]' />
+                        <Image src={"/platform/aws-sv.svg"} alt='aws-sv' width={200} height={80} className='w-full max-w-[45px] md:max-w-[88px]' />
                     </div>
                     <div className='aspect-square border border-[#E8E8E8] bg-[#FCFCFC] flex items-center justify-center'>
-                        <Image src={"/next-flow.svg"} alt='next-flow' width={200} height={80} className='w-full max-w-[64px] md:max-w-[124px]' />
+                        <Image src={"/platform/next-flow.svg"} alt='next-flow' width={200} height={80} className='w-full max-w-[64px] md:max-w-[124px]' />
                     </div>
                     <div className='lg:flex hidden' />
                     <div className='lg:flex hidden' />
                     <div className='aspect-square border border-[#E8E8E8] bg-[#FCFCFC] flex items-center justify-center'>
-                        <Image src={"/ununto.svg"} alt='ununto' width={200} height={80} className='w-full max-w-[60px] md:max-w-[113px]' />
+                        <Image src={"/platform/ununto.svg"} alt='ununto' width={200} height={80} className='w-full max-w-[60px] md:max-w-[113px]' />
                     </div>
                 </div>
             </div>
@@ -59,19 +59,19 @@ const Implementation = () => {
                 </h2>
                 <div className='w-full mt-6 md:mt-[18px] grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[0.16fr_0.21fr_0.27fr_0.36fr] gap-4 md:gap-2'>
                     <div>
-                        <Image src={"/m-1.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
+                        <Image src={"/platform/m-1.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
                         <h3 className='mt-2 text-[24px] md:text-[40px] fobt-[400] tracking-tighter text-c-black leading-[1] font-britti-sans'>Automotive</h3>
                     </div>
                     <div>
-                        <Image src={"/m-2.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
+                        <Image src={"/platform/m-2.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
                         <h3 className='mt-2 text-[24px] md:text-[40px] fobt-[400] tracking-tighter text-c-black leading-[1] font-britti-sans'>Computational Fluid Dynamic</h3>
                     </div>
                     <div>
-                        <Image src={"/m-3.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
+                        <Image src={"/platform/m-3.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
                         <h3 className='mt-2 text-[24px] md:text-[40px] fobt-[400] tracking-tighter text-c-black leading-[1] font-britti-sans'>Pharma & Biotech</h3>
                     </div>
                     <div>
-                        <Image src={"/m-4.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
+                        <Image src={"/platform/m-4.webp"} alt='' width={500} height={500} className='w-full sm:h-auto h-[136px] md:object-fill object-cover' />
                         <h3 className='mt-2 text-[24px] md:text-[40px] fobt-[400] tracking-tighter text-c-black leading-[1] font-britti-sans'>Aerospace</h3>
                     </div>
                 </div>
