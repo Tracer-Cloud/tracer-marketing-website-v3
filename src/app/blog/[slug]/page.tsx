@@ -1,47 +1,61 @@
-import fs from 'fs';
-import path from 'path';
+import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 
-// Generate static paths for all blog posts
+// Temporary hardcoded version for testing
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), 'src/components/content/blog'));
-  const mdxFiles = files.filter(filename => filename.endsWith('.mdx') && !filename.startsWith('_'));
-
-  return mdxFiles.map(filename => ({
-    slug: filename.replace('.mdx', ''),
-  }));
+  // Using hardcoded values instead of dynamic file system operations
+  return [
+    { slug: 'test-post-1' },
+    { slug: 'test-post-2' },
+  ];
 }
 
-// Generate metadata for each blog post
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
-
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
   try {
-    // Dynamically import the MDX file to get its metadata
-    const postModule = await import(`@/components/content/blog/${slug}.mdx`);
-    const metadata = postModule.metadata || {};
+    // Await the params Promise to get the slug
+    const resolvedParams = await params;
+    const slug = resolvedParams.slug;
+
+    const { metadata } = await import(`@/components/content/blog/${slug}.mdx`);
 
     return {
       title: metadata.title || 'Blog Post',
       description: metadata.description,
-      openGraph: metadata.ogImage ? {
-        images: [metadata.ogImage],
-      } : undefined,
+      openGraph: metadata.ogImage
+        ? { images: [metadata.ogImage] }
+        : undefined,
     };
-  } catch {
-    return {
-      title: 'Blog Post Not Found',
-    };
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+    return { title: 'Blog Post Not Found' };
   }
 }
 
-// Render the blog post
-import BlogPostClient from './client-page';
-
-export default function BlogPost({
+// Page component with params as Promise to match Next.js 15 internal type
+export default async function BlogPost({
   params
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  return <BlogPostClient slug={params.slug} />;
+  try {
+    // Await the params Promise to get the slug
+    const resolvedParams = await params;
+    const slug = resolvedParams.slug;
+
+    // Dynamic import of the MDX file
+    const { default: BlogContent } = await import(`@/components/content/blog/${slug}.mdx`);
+
+    return (
+      <article className="max-w-4xl mx-auto px-4 py-12">
+        <BlogContent />
+      </article>
+    );
+  } catch (error) {
+    console.error("Error loading blog post:", error);
+    notFound();
+  }
 }
