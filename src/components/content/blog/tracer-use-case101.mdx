@@ -1,24 +1,3 @@
----
-title: "Observability For Biology - Real-Time Workflow Debugging Use-Case 101"
-date: 2024/09/08
-description: A use-case tale illustrating how Tracer helps bioinformaticians identify and fix pipeline errors in real-time.
-tag: use-case
-ogImage: /images/tracer-blog-5.png
-author: Vincent, Laura, Tushar
----
-
-import { BlogHeader } from "@/components/blog/BlogHeader";
-
-<BlogHeader
-  title="Observability For Biology - Real-Time Workflow Debugging Use-Case 101"
-  description="Error Detection and Workflow Debugging use-case with Tracer"
-  date="September 08, 2024"
-  authors={["vincenthus", "laurabogaert", "tusharwarrier"]}
-/>
-
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-blog-5.png)
-</Frame>
 
 ## Summary
 
@@ -39,35 +18,11 @@ Dr. Olivia Franklin sat at her desk, her evening cuppa growing cold as she stare
 
 That’s when she remembered **Tracer**—a new platform she had integrated into her workflow recently. The software was designed to track, log, and monitor bioinformatics pipelines in real time. She had heard about its capabilities from a colleague but hadn’t fully explored its potential yet. Olivia quickly logged into Tracer through her GitHub account. The interface was clean and intuitive—just what she needed. The system metrics were already laid out in front of her: CPU usage, memory, and disk space all in a simple dashboard.
 
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-usecase-metrics.png)
-</Frame>
-
 She clicked into her ongoing ChIP-Seq pipeline and was greeted with a detailed timeline of events and log messages corresponding to every single metric and event that had been a part of her analyses. She sighed with relief as she saw Tracer’s flowsheet—the entire analysis pipeline visualized step-by-step. What was even better was the ‘Errors’ panel, which highlighted the exact nature of the error she was repeatedly encountering:
-
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-usecase-logs.png)
-</Frame>
-
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-usecase-flowsheet.png)
-</Frame>
 
 "You’ve got to be kidding!" she whispered as Tracer pointed out that there was an issue with the GTF file she was using to create a genome index for her sequencing data. This was likely due to either a malformed or incomplete GTF file or a file from the wrong assembly or species. Without Tracer, Olivia might have spent hours sifting through logs, but now the error was not only visible but also explained in a clear and concise manner. Even better, Tracer had flagged the issue as soon as it occurred, and corresponding terminal outputs were also streamed live.
 
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-usecase-errordb.png)
-</Frame>
-
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-usecase-terminal.png)
-</Frame>
-
 Olivia checked her GTF file, downloaded the correct version, re-initiated the pipeline, and resumed her analyses. The platform even allowed her to preview output files and real-time terminal logs so she could check the quality of the results as they rolled in—without needing to access the server directly.
-
-<Frame fullWidth className="mb-12">
-  ![Tracer](/images/tracer-usecase-previews.png)
-</Frame>
 
 For Olivia, it was a revelation. She could visualize the analysis from end to end without losing hours or days to deciphering technical mishaps. Tracer’s ability to track progress, report metrics, and identify errors was something that took her from frustration to resolution in a matter of minutes. As she watched the pipeline resume its progress on Tracer’s sleek dashboard, Olivia realized that this tool wasn’t just a safety net; it was an integral part of her workflow. It transformed the way she ran her analyses. The ability to visualize her experiments, catch errors early, and monitor system performance—all without being physically tied to her terminal—made her feel more in control than ever. Her analysis was back on track, and with Tracer's help, she knew it would be completed smoothly. She couldn't help but smile. In the world of bioinformatics, where complex workflows often lead to unseen issues, tools like Tracer weren’t just helpful—they were transformative.
 
