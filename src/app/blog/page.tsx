@@ -2,11 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 
 type BlogPost = {
   slug: string;
-  frontMatter: {
+  metadata: {
     title: string;
     date: string;
     description: string;
@@ -16,40 +15,49 @@ type BlogPost = {
   };
 };
 
-export default function BlogPage() {
-  // Get all MDX files from the blog directory
-  const blogDir = path.join(process.cwd(), 'src/app/blog');
-  const files = fs.readdirSync(blogDir);
+export default async function BlogPage() {
+  // Get all MDX files from the content directory
+  const contentDir = path.join(process.cwd(), 'src/components/content/blog');
+  const files = fs.readdirSync(contentDir);
   const mdxFiles = files.filter(file => 
-    file.endsWith('.mdx') && !file.startsWith('_') && file !== 'page.mdx'
+    file.endsWith('.mdx') && !file.startsWith('_')
   );
   
-  // Parse frontmatter from each MDX file
-  const posts = mdxFiles.map(fileName => {
+  // Get metadata from each MDX file using dynamic import
+  const postsPromises = mdxFiles.map(async (fileName) => {
     const slug = fileName.replace(/\.mdx$/, '');
-    const filePath = path.join(blogDir, fileName);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data } = matter(fileContents);
     
-    // Ensure the frontMatter has the required properties
-    const frontMatter = {
-      title: data.title || 'Untitled',
-      date: data.date || new Date().toISOString(),
-      description: data.description || '',
-      tag: data.tag,
-      ogImage: data.ogImage,
-      author: data.author
-    };
-    
-    return {
-      slug,
-      frontMatter,
-    } as BlogPost;
+    try {
+      // Import the MDX file to get its exported metadata
+      const module = await import(`@/components/content/blog/${slug}.mdx`);
+      
+      // Get metadata with defaults for required fields
+      const metadata = {
+        title: module.metadata?.title || 'Untitled',
+        date: module.metadata?.date || new Date().toISOString(),
+        description: module.metadata?.description || '',
+        tag: module.metadata?.tag,
+        ogImage: module.metadata?.ogImage,
+        author: module.metadata?.author
+      };
+      
+      return {
+        slug,
+        metadata,
+      } as BlogPost;
+    } catch (error) {
+      console.error(`Error importing ${slug}.mdx:`, error);
+      return null;
+    }
   });
+  
+  // Wait for all imports to complete
+  const postsWithNull = await Promise.all(postsPromises);
+  const posts = postsWithNull.filter(Boolean) as BlogPost[];
   
   // Sort posts by date (newest first)
   posts.sort((a, b) => {
-    return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime();
+    return new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime();
   });
 
   return (
@@ -60,10 +68,10 @@ export default function BlogPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => {
           // Convert author to array
-          const authors = post.frontMatter.author ? 
-            (typeof post.frontMatter.author === 'string' ? 
-              post.frontMatter.author.split(/,\s*and\s*|,\s*|\s+and\s+/).map(a => a.trim()) : 
-              post.frontMatter.author) : 
+          const authors = post.metadata.author ? 
+            (typeof post.metadata.author === 'string' ? 
+              post.metadata.author.split(/,\s*and\s*|,\s*|\s+and\s+/).map(a => a.trim()) : 
+              post.metadata.author) : 
             [];
           
           return (
@@ -71,8 +79,8 @@ export default function BlogPage() {
               <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
                 <div className="relative h-48 w-full">
                   <Image 
-                    src={post.frontMatter.ogImage || '/images/default-blog.png'} 
-                    alt={post.frontMatter.title} 
+                    src={post.metadata.ogImage || '/images/default-blog.png'} 
+                    alt={post.metadata.title} 
                     fill 
                     className="object-cover"
                   />
@@ -80,12 +88,12 @@ export default function BlogPage() {
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center mb-4">
                     <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full uppercase font-semibold tracking-wide">
-                      {post.frontMatter.tag || 'general'}
+                      {post.metadata.tag || 'general'}
                     </span>
-                    <span className="text-gray-500 text-sm ml-auto">{post.frontMatter.date}</span>
+                    <span className="text-gray-500 text-sm ml-auto">{post.metadata.date}</span>
                   </div>
-                  <h2 className="text-xl font-semibold mb-2">{post.frontMatter.title}</h2>
-                  <p className="text-gray-600 mb-4 flex-1">{post.frontMatter.description}</p>
+                  <h2 className="text-xl font-semibold mb-2">{post.metadata.title}</h2>
+                  <p className="text-gray-600 mb-4 flex-1">{post.metadata.description}</p>
                   {authors.length > 0 && (
                     <div className="flex items-center mt-auto">
                       <div className="flex -space-x-2">

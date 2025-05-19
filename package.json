@@ -18,7 +18,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.12.1",
-    "gray-matter": "^4.0.3",
     "lucide-react": "^0.508.0",
     "next": "15.3.2",
     "react": "^19.0.0",
