@@ -218,7 +218,18 @@ const WhyMonitoringSection = () => {
         </div>
       </div>
 
-      <span className="absolute -bottom-px left-0 hidden h-[62px] w-[33%] bg-foreground md:block"></span>
+      <motion.div
+        className="absolute -bottom-1 left-0 hidden w-[33%] bg-foreground md:block origin-bottom"
+        initial={{ height: "70px" }}
+        whileInView={{
+          height: "85px",
+          transition: {
+            duration: 0.8,
+            ease: [0.6, 0, 0.38, 1]
+          }
+        }}
+        viewport={{ once: false, amount: 0.3 }}
+      ></motion.div>
     </section>
   );
 };
