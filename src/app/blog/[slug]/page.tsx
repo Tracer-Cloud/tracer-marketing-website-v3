@@ -62,8 +62,8 @@ export async function generateMetadata({
   }
 }
 
-// Import the client-side MDX content wrapper
-import MDXContent from './mdx-content';
+// Import the static content component
+import StaticContent from './static-content';
 
 // Page component with params as Promise to match Next.js 15 internal type
 export default async function BlogPost({
@@ -76,8 +76,12 @@ export default async function BlogPost({
     const resolvedParams = await params;
     const slug = resolvedParams.slug;
 
-    // Use the client-side MDX content wrapper
-    return <MDXContent slug={slug} />;
+    // Use the static content component
+    return (
+      <article className="max-w-4xl mx-auto px-4 py-12">
+        <StaticContent slug={slug} />
+      </article>
+    );
   } catch (error) {
     console.error("Error loading blog post:", error);
     notFound();
