@@ -5,7 +5,6 @@ import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DualLeftArrowIcon, MonitorIcon } from '../shared/svgs';
-import { useScrollDirection } from '@/hooks/useScrollDirection';
 
 // Variants for coordinated reveal
 const revealVariants: Variants = {
@@ -45,29 +44,6 @@ const panelVariants: Variants = {
   },
 };
 
-// Image reveal animation
-const imageRevealVariants: Variants = {
-  hidden: {
-    clipPath: 'inset(0% 0% 75% 0%)',
-    opacity: 0.9
-  },
-  visible: {
-    clipPath: 'inset(0% 0% 0% 0%)',
-    opacity: 1,
-    transition: {
-      clipPath: {
-        duration: 0.8, // Faster animation
-        ease: [0.6, 0, 0.38, 1],
-        delay: 0.1 // Reduced delay
-      },
-      opacity: {
-        duration: 0.7, // Faster opacity transition
-        ease: [0.6, 0, 0.38, 1],
-      }
-    },
-  },
-};
-
 // Infra text pulls down
 const infraVariants: Variants = {
   hidden: { y: -20 },
@@ -81,9 +57,6 @@ const infraVariants: Variants = {
 };
 
 export default function DigitalDiscoverySection() {
-  // We don't need the state and scroll direction hook anymore
-  const scrollDirection = useScrollDirection(); // Keep this for the white rectangle animation
-
   return (
     <section id="digitalDiscovery" className="relative overflow-hidden bg-[#202020]">
       <div
@@ -237,7 +210,7 @@ export default function DigitalDiscoverySection() {
           </p>
           <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
             This blind spot in scientific computing is costing us breakthroughs.
-          </p>
+          </p>git
         </motion.div>
 
         {/* Scroll-down arrow - white rectangle in the bottom left that expands when in view */}
