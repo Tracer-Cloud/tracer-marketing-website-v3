@@ -17,7 +17,6 @@ import PreLoaderProgress from "@/components/shared/PreLoader"
 const HomePage = () => {
   return (
     <>
-      <PreLoaderProgress />
       <HeroSection />
       <DigitalDiscoverySection />
       <CoreChallengeSection />
