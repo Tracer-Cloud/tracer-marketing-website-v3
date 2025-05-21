@@ -210,7 +210,7 @@ export default function DigitalDiscoverySection() {
           </p>
           <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
             This blind spot in scientific computing is costing us breakthroughs.
-          </p>git
+          </p>
         </motion.div>
 
         {/* Scroll-down arrow - white rectangle in the bottom left that expands when in view */}
