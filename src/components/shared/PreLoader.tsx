@@ -35,11 +35,11 @@ const PreLoaderProgress = () => {
 
       <div className="mt-6 flex flex-col items-center">
         <Image
-          src="/tracer-logo.svg"
+          src="/shared/tracer-logo-black.png"
           alt="Tracer Logo"
           width={123}
           height={29}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 pb-4"
         />
       </div>
     </div>
