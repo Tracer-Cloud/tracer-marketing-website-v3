@@ -29,8 +29,8 @@ const UnifiedPlatformOverview = () => {
                     className="max-w-[500px] font-britti-sans text-base font-normal leading-4 text-foreground md:text-xl md:leading-[22px]"
                     style={{ letterSpacing: "-0.02em" }}
                   >
-                    The nfrastructure that unifies science and engineering teams
-                    to power the next generation of AI driven breakthroughs
+                    The infrastructure that unifies science and engineering teams
+                    and powers the next generation of AI-driven breakthroughs
                   </h6>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { MDXProviderWrapper } from '@/components/mdx-provider';
 
 interface MDXContentProps {
   slug: string;
@@ -50,7 +51,9 @@ export default function MDXContent({ slug }: MDXContentProps) {
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-12">
-      <Component />
+      <MDXProviderWrapper>
+        <Component />
+      </MDXProviderWrapper>
     </article>
   );
 }
