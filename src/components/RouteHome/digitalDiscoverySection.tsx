@@ -206,7 +206,7 @@ export default function DigitalDiscoverySection() {
           className="mt-14 max-w-[691px] md:ml-auto md:mt-36 lg:mt-[196px]"
         >
           <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-foreground md:text-xl md:tracking-[-0.02em]">
-            We can't tell where to double down or when we have gone completely off track.
+            We can&apos;t tell where to double down or when we have gone completely off track.
           </p>
           <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
             This blind spot in scientific computing is costing us breakthroughs.
