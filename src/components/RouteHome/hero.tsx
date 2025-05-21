@@ -103,7 +103,7 @@ export default function HeroSection() {
           <p className="mt-4 text-sm md:max-w-[453px] md:text-base">
             Tracer combines cutting-edge technological advances with the deep
             understanding of scientific industries to give insights into
-            enterprises' digital and AI acceleration.
+            enterprises&apos; digital and AI acceleration.
           </p>
         </motion.div>
 
