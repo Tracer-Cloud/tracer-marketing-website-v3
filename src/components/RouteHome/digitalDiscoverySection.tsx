@@ -5,6 +5,7 @@ import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DualLeftArrowIcon, MonitorIcon } from '../shared/svgs';
+import { useScrollDirection } from '@/hooks/useScrollDirection';
 
 // Variants for coordinated reveal
 const revealVariants: Variants = {
@@ -80,6 +81,9 @@ const infraVariants: Variants = {
 };
 
 export default function DigitalDiscoverySection() {
+  // We don't need the state and scroll direction hook anymore
+  const scrollDirection = useScrollDirection(); // Keep this for the white rectangle animation
+
   return (
     <section id="digitalDiscovery" className="relative overflow-hidden bg-[#202020]">
       <div
@@ -91,10 +95,11 @@ export default function DigitalDiscoverySection() {
           relative
         "
       >
-        {/* Intro text animation */}
+        {/* Intro text animation - appears once and stays */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="w-full max-w-[390px] relative z-20 mt-0 md:mt-0"
         >
@@ -156,15 +161,37 @@ export default function DigitalDiscoverySection() {
                 className={`flex flex-col gap-2 ${i === 2 ? 'md:ml-auto' : ''}`}
               >
                 <p className="md:hidden">{item.caption}</p>
-                <div className="relative overflow-hidden bg-transparent border-0 outline-none" style={{ border: 'none' }}>
+                <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]" style={{ border: 'none' }}>
                   {/* Background block that blends with the background */}
                   <div className="absolute inset-0 bg-[#202020] z-10"></div>
 
-                  {/* Image with reveal animation */}
+                  {/* Mask that slides away to reveal the image */}
                   <motion.div
-                    variants={imageRevealVariants}
+                    className="absolute inset-0 bg-[#202020] z-30 origin-bottom"
+                    initial={{ scaleY: 1 }}
+                    whileInView={{
+                      scaleY: 0,
+                      transition: {
+                        duration: 0.8,
+                        ease: [0.6, 0, 0.38, 1]
+                      }
+                    }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  />
+
+                  {/* Image */}
+                  <motion.div
                     className="relative z-20 border-0 outline-none"
                     style={{ border: 'none' }}
+                    initial={{ opacity: 0.9 }}
+                    whileInView={{
+                      opacity: 1,
+                      transition: {
+                        duration: 0.8,
+                        ease: [0.6, 0, 0.38, 1]
+                      }
+                    }}
+                    viewport={{ once: false, amount: 0.3 }}
                   >
                     <Image
                       src={item.src}
@@ -197,10 +224,10 @@ export default function DigitalDiscoverySection() {
           </motion.p>
         </motion.div>
 
-        {/* Conclusion */}
+        {/* Conclusion - appears once and stays */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="mt-14 max-w-[691px] md:ml-auto md:mt-36 lg:mt-[196px]"
@@ -213,10 +240,10 @@ export default function DigitalDiscoverySection() {
           </p>
         </motion.div>
 
-        {/* Scroll-down arrow - white rectangle in the bottom left that expands on scroll */}
+        {/* Scroll-down arrow - white rectangle in the bottom left that expands when in view */}
         <motion.div
           className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-white origin-left"
-          initial={{ width: "10%" }}
+          initial={{ width: "20%" }}
           whileInView={{
             width: "36.75%",
             transition: {
@@ -224,7 +251,7 @@ export default function DigitalDiscoverySection() {
               ease: [0.6, 0, 0.38, 1]
             }
           }}
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: false, amount: 0.8 }}
         >
           <Link href="#digitalDiscovery" className="flex h-full items-center justify-end pr-8">
             <Image src="/icons/down-arrow.svg" alt="Down arrow" width={7.5} height={18} />

@@ -124,22 +124,18 @@ export default function HeroSection() {
           />
         </motion.div>
 
-        {/* Gray rectangle in the bottom left that expands with hero animation */}
+        {/* Gray rectangle in the bottom left that expands when in view */}
         <motion.div
           className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-[#202020] origin-left z-10"
-          variants={{
-            hidden: { width: "10%" },
-            visible: {
-              width: "66.67%", // 2/3 of the page width
-              transition: {
-                duration: 1.5,
-                ease: [0.6, 0, 0.38, 1],
-                delay: 0.5
-              }
+          initial={{ width: "20%" }}
+          whileInView={{
+            width: "66.67%",
+            transition: {
+              duration: 1.0,
+              ease: [0.6, 0, 0.38, 1]
             }
           }}
-          initial="hidden"
-          animate={animate ? 'visible' : 'hidden'}
+          viewport={{ once: false, amount: 0.8 }}
         />
 
         {/* BACKGROUND LINES */}
