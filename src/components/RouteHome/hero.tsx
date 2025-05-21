@@ -18,8 +18,8 @@ const paragraphVariant = headingVariant;
 
 // Slide diagonally from top-left into place
 const imageVariant: Variants = {
-  hidden: { x: -200, y: -200, opacity: 0 },
-  visible: { x: 0, y: 0, opacity: 1, transition: animationConfig },
+  hidden: { x: -200, y: -250, opacity: 0 },
+  visible: { x: 0, y: 0, opacity: 1, transition: { ...animationConfig, duration: 2.2 } },
 };
 
 const linesVariant: Variants = {
@@ -68,9 +68,10 @@ export default function HeroSection() {
   return (
     <section
       key={refreshKey}
-      className="h-[643px] bg-black text-white lg:h-[808px]"
+      className="h-[680px] bg-black text-white lg:h-[850px]"
     >
       <div className="container_fluid relative flex h-full flex-col items-center justify-center overflow-hidden lg:block">
+
         {/* HEADINGS */}
         <motion.h1
           variants={headingVariant}
@@ -112,7 +113,7 @@ export default function HeroSection() {
           variants={imageVariant}
           initial="hidden"
           animate={animate ? 'visible' : 'hidden'}
-          className="absolute left-0 top-4 z-[2] w-full md:bottom-auto md:left-auto md:right-auto md:top-auto"
+          className="absolute left-0 top-[-50px] z-[2] w-full md:bottom-auto md:left-auto md:right-auto md:top-[-80px]"
         >
           <Image
             src="/home/hero.png"
@@ -122,6 +123,24 @@ export default function HeroSection() {
             className="h-full w-full scale-[3.5] md:scale-100"
           />
         </motion.div>
+
+        {/* Gray rectangle in the bottom left that expands with hero animation */}
+        <motion.div
+          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-[#202020] origin-left z-10"
+          variants={{
+            hidden: { width: "10%" },
+            visible: {
+              width: "66.67%", // 2/3 of the page width
+              transition: {
+                duration: 1.5,
+                ease: [0.6, 0, 0.38, 1],
+                delay: 0.5
+              }
+            }
+          }}
+          initial="hidden"
+          animate={animate ? 'visible' : 'hidden'}
+        />
 
         {/* BACKGROUND LINES */}
         <motion.svg
