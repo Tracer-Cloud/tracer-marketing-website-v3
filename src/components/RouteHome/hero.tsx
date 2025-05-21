@@ -29,13 +29,40 @@ const linesVariant: Variants = {
 
 export default function HeroSection() {
   const [animate, setAnimate] = useState(false);
-  
-  // This will force the component to remount on every page refresh
-  const refreshKey = Math.random();
+  const [refreshKey, setRefreshKey] = useState(Date.now());
 
-  // Trigger entrance animation on mount
+  // This effect runs on component mount and handles the animation
   useEffect(() => {
     setAnimate(true);
+
+    // This is the key part: add an event listener for page visibility changes
+    // This will detect when the user refreshes the page or returns to it
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        // Reset animation state
+        setAnimate(false);
+        // Force remount by changing the key
+        setRefreshKey(Date.now());
+        // Small timeout to ensure animation reset
+        setTimeout(() => setAnimate(true), 50);
+      }
+    };
+
+    // Add event listener for page visibility changes
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Also handle page refresh using beforeunload
+    const handleBeforeUnload = () => {
+      setAnimate(false);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Cleanup event listeners on unmount
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
   return (
