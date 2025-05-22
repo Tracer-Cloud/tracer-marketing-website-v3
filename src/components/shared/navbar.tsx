@@ -59,7 +59,7 @@ const NavigationBar = () => {
                     <SheetContent className="z-[1000] bg-white">
                         <SheetHeader>
                             <SheetTitle>
-                                <Image src={"/tracker-logo-black.png"} alt="tracker-logo-black" width={140} height={30} className="w-full max-w-[114px]" />
+                                <Image src={"/shared/tracer-logo-black.png"} alt="tracer-logo-black" width={140} height={30} className="w-full max-w-[114px]" />
                             </SheetTitle>
                         </SheetHeader>
                         <div className="grid gap-4 px-4">
