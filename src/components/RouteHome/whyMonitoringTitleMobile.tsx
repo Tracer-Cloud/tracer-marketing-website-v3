@@ -20,7 +20,7 @@ const WhyMonitoringTitleMobile = () => {
         </span>
         <span className="relative px-1">
           what you can&apos;t see
-          <span className="absolute inset-0 left-0 top-0 bg-background/10 backdrop-blur-[2px]"></span>
+          <span className="absolute inset-0 left-0 top-0 backdrop-blur-[2px]"></span>
         </span>
       </div>
     </>

@@ -91,9 +91,9 @@ const WhyMonitoringSection = () => {
   }, [textLinesInView, textLinesControls]);
 
   return (
-    <section className="relative overflow-y-clip pb-4 md:pb-[86px]">
-      <div className="border-y border-grey-100">
-        <div className="container_fluid flex w-full items-center gap-14 bg-background py-3 md:gap-24 md:py-2.5">
+    <section className="relative overflow-y-clip pb-4 md:pb-[86px] bg-[#FCFCFC]">
+      <div className="border-y border-[#E8E8E8]">
+        <div className="container_fluid flex w-full items-center gap-14 bg-[#FCFCFC] py-3 md:gap-24 md:py-2.5 pl-6">
           <Image
             src={"/home/tracer-icon.svg"}
             alt="Tracer icon"
@@ -101,7 +101,7 @@ const WhyMonitoringSection = () => {
             height={29}
             className="h-3 w-auto shrink-0"
           />
-          <div className="flex w-full justify-between gap-2 font-chakra-petch text-sm font-normal uppercase tracking-[-0.01em] text-foreground">
+          <div className="flex w-full justify-between gap-2 font-chakra-petch text-sm font-normal uppercase tracking-[-0.01em] text-[#202020]">
             <span>the</span>
             <span className="sm:ml-[12%]">tracer</span>
             <span>difference</span>
@@ -113,7 +113,7 @@ const WhyMonitoringSection = () => {
         <h2 className="sr-only">Why Monitoring as the Solution</h2>
         <motion.div
           ref={titleRef}
-          className="relative font-britti-sans text-6xl font-normal leading-[0.8em] tracking-[-0.04em] text-foreground lg:text-8xl"
+          className="relative font-britti-sans text-6xl font-normal leading-[0.8em] tracking-[-0.04em] text-[#202020] lg:text-8xl px-6"
           initial={{ y: 0 }}
           animate={titleControls}
         >
@@ -125,7 +125,7 @@ const WhyMonitoringSection = () => {
 
         <div className="flex flex-col gap-14 pt-10 md:pt-[220px] lg:gap-[72px] lg:pt-[330px]">
           <div className="flex flex-col gap-10 md:flex-row md:justify-between lg:gap-20">
-            <div className="font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-foreground md:max-w-[520px] md:text-2xl lg:text-[32px]">
+            <div className="font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-[#202020] md:max-w-[520px] md:text-2xl lg:text-[32px] px-6">
               Modern science is going software-first. With AI and digital tools,
               researchers are moving fast — and becoming one of the largest
               developer communities. They want
@@ -171,16 +171,16 @@ const WhyMonitoringSection = () => {
               />
             </motion.div>
 
-            <div className="w-full max-w-[700px] flex-1">
-              <span className="font-britti-sans text-2xl font-normal tracking-[-0.02em] text-foreground md:text-3xl lg:text-[40px]">
+            <div className="w-full max-w-[700px] flex-1 px-6">
+              <span className="font-britti-sans text-2xl font-normal tracking-[-0.02em] text-[#202020] md:text-3xl lg:text-[40px]">
                 Science needs
               </span>
-              <h3 className="mt-1.5 font-britti-sans text-[40px] font-normal leading-[0.8em] tracking-[-0.04em] text-foreground md:text-6xl lg:text-6xl xl:text-8xl">
+              <h3 className="mt-1.5 font-britti-sans text-[40px] font-normal leading-[0.8em] tracking-[-0.04em] text-[#202020] md:text-6xl lg:text-6xl xl:text-8xl">
                 better information
               </h3>
               <motion.div
                 ref={textLinesRef}
-                className="my-6 flex flex-col space-y-2 text-sm font-normal text-foreground md:w-full md:text-base lg:my-10 xl:w-3/5"
+                className="my-6 flex flex-col space-y-2 text-sm font-normal text-[#202020] md:w-full md:text-base lg:my-10 xl:w-3/5"
               >
                 <motion.span
                   custom={0}
@@ -206,7 +206,7 @@ const WhyMonitoringSection = () => {
                   Context they can act on.
                 </motion.span>
               </motion.div>
-              <p className="font-britti-sans text-sm font-normal leading-none text-foreground md:text-base">
+              <p className="font-britti-sans text-sm font-normal leading-none text-[#202020] md:text-base">
                 Because in high-stakes decision making, every wrong assumption
                 costs time, money, and opportunity. Generic monitoring tools
                 weren&apos;t built for this. They miss the nuance, ignore the
