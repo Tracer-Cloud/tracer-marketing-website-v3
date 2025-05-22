@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
 import { DualLeftArrowIcon, MonitorIcon } from '../shared/svgs';
 
 // Variants for coordinated reveal
@@ -58,14 +57,28 @@ const infraVariants: Variants = {
 
 export default function DigitalDiscoverySection() {
   return (
-    <section id="digitalDiscovery" className="relative overflow-hidden bg-[#202020]">
+    <section id="digitalDiscovery" className="relative overflow-hidden bg-[#FCFCFC]">
+      {/* Dark grey rectangle in the top right */}
+      <motion.div
+        className="absolute top-0 right-0 h-[46px] md:h-[70px] bg-black origin-right z-10"
+        initial={{ width: "50%" }}
+        whileInView={{
+          width: "35%",
+          transition: {
+            duration: 1.0,
+            ease: [0.6, 0, 0.38, 1]
+          }
+        }}
+        viewport={{ once: false, amount: 0.8 }}
+      />
+
       <div
         className="
-          container_fluid
-          bg-[url(/images/not-found-page/bg-lines.svg)]
+          bg-[url(/home/bg-lines.svg)]
           bg-contain bg-center bg-repeat-y
-          pb-20 pt-4 md:pt-2 lg:pb-6
+          pb-20 pt-12 md:pt-16 lg:pb-6
           relative
+          mx-auto max-w-[1440px] w-full
         "
       >
         {/* Intro text animation - appears once and stays */}
@@ -74,12 +87,12 @@ export default function DigitalDiscoverySection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="w-full max-w-[390px] relative z-20 mt-0 md:mt-0"
+          className="w-full max-w-[500px] relative z-20 mt-0 md:mt-0 pl-5 md:pl-10"
         >
-          <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:text-3xl lg:text-[40px]">
-            Science has embraced digital discovery
+          <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:text-3xl lg:text-[40px]">
+            Science has embraced <br />digital discovery
           </h3>
-          <p className="mt-2 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.02em] text-foreground md:text-xl">
+          <p className="mt-2 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.02em] text-[#202020] md:text-xl whitespace-nowrap">
             But the tools have not caught up with the vision.
           </p>
         </motion.div>
@@ -96,8 +109,8 @@ export default function DigitalDiscoverySection() {
           <motion.div
             className="
               absolute inset-0
-              bg-[#202020]
-              bg-[url(/images/not-found-page/bg-lines.svg)]
+              bg-[#FCFCFC]
+              bg-[url(/home/bg-lines.svg)]
               bg-contain bg-center bg-repeat-y
               origin-top
             "
@@ -107,10 +120,31 @@ export default function DigitalDiscoverySection() {
           {/* Subheading slides up */}
           <motion.h3
             variants={panelVariants}
-            className="font-britti-sans text-xl font-normal leading-none tracking-[-0.01em] text-foreground md:text-2xl lg:text-[32px]"
+            className="font-britti-sans text-xl font-normal leading-none tracking-[-0.01em] text-[#202020] md:text-2xl lg:text-[32px]"
           >
             AI and digital tools offer unprecedented potential,
           </motion.h3>
+
+          {/* Captions with connecting lines */}
+          <motion.div
+            variants={panelVariants}
+            className="mt-4 hidden md:flex items-center gap-4 lg:gap-6"
+          >
+            {[
+              'from curing cancer',
+              'personalised medicine',
+              'revolutionising human computer interaction'
+            ].map((caption, i) => (
+              <>
+                <p key={i} className="font-britti-sans text-sm font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-base text-center whitespace-nowrap">
+                  {caption}
+                </p>
+                {i < 2 && (
+                  <div className={`h-px bg-[#202020] flex-shrink-0 ${i === 1 ? 'w-32' : 'w-16'}`}></div>
+                )}
+              </>
+            ))}
+          </motion.div>
 
           {/* Panels */}
           <div className="mt-4 flex flex-col gap-4 md:flex-row lg:gap-6">
@@ -124,23 +158,23 @@ export default function DigitalDiscoverySection() {
                 caption: 'personalised medicine',
               },
               {
-                src: '/home/revolutionising-image.webp',
+                src: '/home/dog-sna.png',
                 caption: 'revolutionising human computer interaction',
               },
             ].map((item, i) => (
               <motion.div
                 key={i}
                 variants={panelVariants}
-                className={`flex flex-col gap-2 ${i === 2 ? 'md:ml-auto' : ''}`}
+                className={`flex flex-col gap-2 ${i === 2 ? 'md:ml-auto md:pr-20' : ''}`}
               >
                 <p className="md:hidden">{item.caption}</p>
                 <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]" style={{ border: 'none' }}>
                   {/* Background block that blends with the background */}
-                  <div className="absolute inset-0 bg-[#202020] z-10"></div>
+                  <div className="absolute inset-0 bg-[#FCFCFC] z-10"></div>
 
                   {/* Mask that slides away to reveal the image */}
                   <motion.div
-                    className="absolute inset-0 bg-[#202020] z-30 origin-bottom"
+                    className="absolute inset-0 bg-[#FCFCFC] z-30 origin-bottom"
                     initial={{ scaleY: 1 }}
                     whileInView={{
                       scaleY: 0,
@@ -183,17 +217,19 @@ export default function DigitalDiscoverySection() {
           {/* Infra text pulls down */}
           <motion.p
             variants={infraVariants}
-            className="mt-8 font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-foreground md:mt-12 md:text-2xl lg:text-[32px]"
+            className="mt-8 font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-[#202020] md:mt-12 md:text-2xl lg:text-[32px] md:pr-48"
           >
             Yet, the{' '}
             <span className="inline-flex mx-0.5 w-5 align-middle md:w-8">
               <MonitorIcon />
             </span>{' '}
-            infrastructure that supports this innovation is lagging by not giving enough information,{' '}
+            infrastructure that supports this innovation <br />
+            is lagging by not giving enough information,{' '}
             <span className="inline-flex mx-0.5 w-6 align-middle">
               <DualLeftArrowIcon />
             </span>{' '}
-            slowing the very progress it aims to support.
+            slowing <br />
+            the very progress it aims to support. <br />
           </motion.p>
         </motion.div>
 
@@ -203,19 +239,19 @@ export default function DigitalDiscoverySection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-14 max-w-[691px] md:ml-auto md:mt-36 lg:mt-[196px]"
+          className="mt-14 max-w-[691px] md:ml-auto md:mr-16 md:mt-36 lg:mt-[196px]"
         >
-          <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-foreground md:text-xl md:tracking-[-0.02em]">
+          <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-xl md:tracking-[-0.02em]">
             We can&apos;t tell where to double down or when we have gone completely off track.
           </p>
-          <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
-            This blind spot in scientific computing is costing us breakthroughs.
+          <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
+            This blind spot in scientific <br />computing is costing us breakthroughs.
           </p>
         </motion.div>
 
-        {/* Scroll-down arrow - white rectangle in the bottom left that expands when in view */}
+        {/* Scroll-down arrow - rectangle in the bottom left that expands when in view */}
         <motion.div
-          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-white origin-left"
+          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-[#202020] origin-left"
           initial={{ width: "20%" }}
           whileInView={{
             width: "36.75%",
@@ -225,11 +261,7 @@ export default function DigitalDiscoverySection() {
             }
           }}
           viewport={{ once: false, amount: 0.8 }}
-        >
-          <Link href="#digitalDiscovery" className="flex h-full items-center justify-end pr-8">
-            <Image src="/icons/down-arrow.svg" alt="Down arrow" width={7.5} height={18} />
-          </Link>
-        </motion.div>
+        />
       </div>
     </section>
   );

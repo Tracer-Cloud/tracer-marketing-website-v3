@@ -1,0 +1,14 @@
+<svg width="1440" height="850" viewBox="0 0 1440 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_hero)">
+<rect width="1440" height="850" fill="transparent"/>
+<path d="M151.25 -0.5V1200" stroke="#404040"/>
+<path d="M531.25 -0.5V1200" stroke="#404040"/>
+<path d="M911.25 -0.5V1200" stroke="#404040"/>
+<path d="M1291.25 -0.5V1200" stroke="#404040"/>
+</g>
+<defs>
+<clipPath id="clip0_hero">
+<rect width="1440" height="850" fill="white"/>
+</clipPath>
+</defs>
+</svg>
