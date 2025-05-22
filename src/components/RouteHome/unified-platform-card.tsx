@@ -1,11 +1,44 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { unifiedPlatformData } from "./data/unifiedPlatformData";
 
 const UnifiedPlatformCard = () => {
+  // Animation variants for staggered fade-in from left
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.3, // Delay between each card animation
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, 0, 0.38, 1]
+      }
+    }
+  };
+
   return (
-    <div className="mt-10 grid gap-10 px-4 md:mt-14 lg:grid-cols-3 lg:gap-[120px]">
+    <motion.div
+      className="mt-10 grid gap-10 px-4 md:mt-14 lg:grid-cols-3 lg:gap-[120px]"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {unifiedPlatformData.map((item) => (
-        <div
+        <motion.div
           key={item.id}
+          variants={cardVariants}
           className={`relative h-fit space-y-6 border-l border-[#E8E8E8] pl-3 md:pl-4 xl:max-w-[330px] ${
             item.marginTop || ""
           }`}
@@ -27,9 +60,9 @@ const UnifiedPlatformCard = () => {
               {item.description}
             </p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

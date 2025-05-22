@@ -102,7 +102,7 @@ const HowTracerWorks = () => {
               <p className="font-britti-sans text-base font-normal leading-none tracking-[-0.02em] text-foreground lg:text-lg xl:text-xl">
                 Tracer uses eBPF-powered operating-system (OS) level extraction
                 technologies to reach actionable insights. What others canʼt
-                see, we extract, transform, and explain
+                see, we extract, transform, and explain.
               </p>
               <Link
                 href={"/technology"}

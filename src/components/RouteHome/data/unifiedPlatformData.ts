@@ -14,9 +14,9 @@ export const unifiedPlatformData: UnifiedPlatformItem[] = [
   {
     id: "tracer-intelligence",
     label: "_Tracer Intelligence",
-    title: "Total Visibility into Computational Infrastructure",
+    title: "Total visibility into computational infrastructure",
     description:
-      "Gain real-time, granular insights into every workload and process, independent of coding language, cloud structure or location",
+      "Gain real-time, granular insights into every workload and process, independent of coding language, cloud structure, or location",
     marginTop: "lg:mt-[240px]",
     imageSrc: "/home/line-35.svg",
     imagePosition: "absolute bottom-[-105px] left-[-1px]",
@@ -26,9 +26,9 @@ export const unifiedPlatformData: UnifiedPlatformItem[] = [
   {
     id: "tracer-performance",
     label: "_Tracer Performance",
-    title: "Predict and optimize compute requirements",
+    title: "Predict and optimise compute requirements",
     description:
-      "Forecast the exact running time and compute needs of pipelines. Further optimize your underutilized instances and increase the usage of AI models in a cost-efficient manner",
+      "Forecast the exact running time and compute needs of pipelines. Further optimise your underutilised instances and increase the usage of AI models in a cost-efficient manner",
     imageSrc: "/home/line-52.svg",
     marginTop: "lg:mt-[180px]",
     imagePosition: "absolute bottom-[-102px] left-[-1px]",
@@ -38,7 +38,7 @@ export const unifiedPlatformData: UnifiedPlatformItem[] = [
   {
     id: "tracer-debug",
     label: "_Tracer Debug",
-    title: "Fix issues Instantly",
+    title: "Fix issues instantly",
     description:
       "Gain deep insights into the root causes of bugs across all analyses, recognise the error type, and solve instantly",
     marginTop: "lg:mt-[240px] lg:ml-[30px]",
@@ -63,9 +63,9 @@ export const unifiedCardDataLg: UnifiedCardData[] = [
   {
     id: "intelligence",
     tag: "_Tracer Intelligence",
-    title: "Total Visibility into Computational Infrastructure",
+    title: "Total visibility into computational infrastructure",
     description:
-      "Gain real-time, granular insights into every workload and process, independent of coding language, cloud structure or location",
+      "Gain real-time, granular insights into every workload and process, independent of coding language, cloud structure, or location",
     lineImage: "/home/line-35.svg",
     containerStyle: "absolute left-4 top-[150px] xl:left-[35px] xl:top-[210px]",
     lineImageStyle:
@@ -74,9 +74,9 @@ export const unifiedCardDataLg: UnifiedCardData[] = [
   {
     id: "performance",
     tag: "_Tracer Performance",
-    title: "Predict and optimize compute requirements",
+    title: "Predict and optimise compute requirements",
     description:
-      "Forecast the exact running time and compute needs of pipelines. Further optimize your underutilized instances and increase the usage of AI models in a cost-efficient manner",
+      "Forecast the exact running time and compute needs of pipelines. Further optimise your underutilised instances and increase the usage of AI models in a cost-efficient manner",
     lineImage: "/home/line-52.svg",
     containerStyle:
       "absolute left-[35%] top-[35px] xl:left-[39%] xl:top-[70px]",
@@ -85,7 +85,7 @@ export const unifiedCardDataLg: UnifiedCardData[] = [
   {
     id: "debug",
     tag: "_Tracer Debug",
-    title: "Fix issues Instantly",
+    title: "Fix issues instantly",
     description:
       "Gain deep insights into the root causes of bugs across all analyses, recognise the error type, and solve instantly",
     lineImage: "/home/line-54.svg",

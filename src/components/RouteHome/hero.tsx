@@ -9,8 +9,8 @@ const animationConfig = { delay: 0.001, duration: 1.8, ease: [0.6, 0, 0.38, 1] }
 
 // Animation variants
 const headingVariant: Variants = {
-  hidden: { x: -50, y: -50, opacity: 0 },
-  visible: { x: 0, y: 0, opacity: 1, transition: animationConfig },
+  hidden: { x: -50, y: -50 },
+  visible: { x: 0, y: 0, transition: animationConfig },
 };
 
 const subheadingVariant = headingVariant;
@@ -18,13 +18,13 @@ const paragraphVariant = headingVariant;
 
 // Slide diagonally from top-left into place
 const imageVariant: Variants = {
-  hidden: { x: -200, y: -250, opacity: 0 },
-  visible: { x: 0, y: 0, opacity: 1, transition: { ...animationConfig, duration: 2.2 } },
+  hidden: { x: -200, y: -250 },
+  visible: { x: 0, y: 0, transition: { ...animationConfig, duration: 2.2 } },
 };
 
 const linesVariant: Variants = {
-  hidden: { opacity: 0, pathLength: 0 },
-  visible: { opacity: 1, pathLength: 1, transition: animationConfig },
+  hidden: { pathLength: 0 },
+  visible: { pathLength: 1, transition: animationConfig },
 };
 
 export default function HeroSection() {
