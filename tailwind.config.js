@@ -83,6 +83,7 @@ module.exports = {
       },
       fontFamily: {
         'britti-sans': ['var(--font-britti-sans)'],
+        'chakra-petch': ['var(--font-chakra-petch)', 'sans-serif'],
       },
     },
   },
