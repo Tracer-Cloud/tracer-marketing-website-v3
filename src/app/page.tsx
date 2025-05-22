@@ -12,7 +12,7 @@ import UnifiedPlatformOverview from "@/components/RouteHome/unified-platform-ove
 import WhyMonitoringSection from "@/components/RouteHome/whyMonitoringSection";
 
 // Shared
-import PreLoaderProgress from "@/components/shared/pre-loader"
+import PreLoaderProgress from "@/components/shared/PreLoader"
 
 const HomePage = () => {
   return (
