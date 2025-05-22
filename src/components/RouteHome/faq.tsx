@@ -35,10 +35,10 @@ const Faq = () => {
                         {item.question}
                       </p>
                       <div
-                        className={`overflow-hidden transition-all duration-500 ${openIndex === index ? "mt-4 max-h-[500px]" : "max-h-0"
+                        className={`overflow-hidden transition-all duration-500 ${openIndex === index ? "mt-5 max-h-[500px]" : "max-h-0"
                           }`}
                       >
-                        <p className="max-w-[763px] font-britti-sans text-base font-normal leading-[17px] text-foreground">
+                        <p className="max-w-[763px] font-britti-sans text-base font-normal leading-[18px] text-foreground">
                           {item.answer}
                         </p>
                       </div>

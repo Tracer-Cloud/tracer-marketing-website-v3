@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const DigitalDiscoverySection = () => {
   return (
-    <section id="digitalDiscovery" className="relative overflow-y-clip bg-[#FCFCFC] text-[#202020]">
-      <div className="container_fluid bg-[url(/home/bg-lines.svg)] bg-contain bg-center bg-repeat-y pb-20 pt-16 md:pt-8 lg:pb-6">
+    <section id="digitalDiscovery" className="relative overflow-y-clip bg-[#FCFCFC] px-4 text-[#202020]">
+      <div className="container_fluid bg-[url(/home/bg-lines.svg)] bg-contain bg-center bg-repeat-y pb-20 pt-16 md:pt-8 lg:pb-40">
         <div className="w-full max-w-[390px]">
           <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:text-3xl lg:text-[40px]">
             Science has embraced digital discovery
@@ -26,7 +26,7 @@ const DigitalDiscoverySection = () => {
                 <p className="inline-flex">personalised medicine</p>
                 <span className="flex h-px flex-1 bg-black"></span>
                 <p className="inline-flex">
-                  revolutionising human -computer interaction
+                  revolutionising human-computer interaction
                 </p>
               </div>
               <div className="flex flex-col gap-4 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:flex-row lg:gap-6">
@@ -56,7 +56,7 @@ const DigitalDiscoverySection = () => {
                     -computer interaction
                   </p>
                   <Image
-                    src={"/home/curing-cancer-image.webp"}
+                    src={"/home/dog-sna.png"}
                     alt="Curing cancer image"
                     width={215}
                     height={107}
@@ -76,17 +76,16 @@ const DigitalDiscoverySection = () => {
             <span className="mx-0.5 inline-flex w-6 align-middle">
               <DualLeftArrowIcon />
             </span>{" "}
-            slowing the very progress it aims to support. flexibility and
-            visibility, not no-code shortcuts.
+            slowing the very progress it aims to support.
           </div>
         </div>
-        <div className="mt-14 max-w-[691px] md:ml-auto md:mt-36 lg:mt-[196px]">
+        <div className="mt-14 max-w-[930px] md:ml-auto md:mt-36 lg:mt-[106px]">
           <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-xl md:tracking-[-0.02em]">
             We canʼt tell where to double down or when we have gone completely
             off track.
           </p>
           <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
-            This blind spot in scientific computing is costing us breakthroughs.
+            This blind spot in scientific computing <br className="hidden xl:flex" /> is costing us breakthroughs.
           </p>
         </div>
       </div>

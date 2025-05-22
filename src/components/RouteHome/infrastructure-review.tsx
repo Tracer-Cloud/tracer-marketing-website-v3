@@ -56,7 +56,7 @@ const InfrastructureReview = () => {
                         {item.title}
                       </h4>
                       <p className="max-w-[490px] font-britti-sans text-sm font-normal leading-[17px] text-[#202020] md:text-base">
-                        {item.description}
+                        {item.description}.
                       </p>
                     </div>
                     <div className="w-[136px] md:w-[147px]">

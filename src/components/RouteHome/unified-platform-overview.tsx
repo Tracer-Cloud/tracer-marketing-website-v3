@@ -12,12 +12,12 @@ const UnifiedPlatformOverview = () => {
             {/* heading part */}
             <div className="space-y-6 px-4 md:space-y-12">
               <div className="space-y-6">
-                <span
+                <p
                   className="font-chakra-petch text-sm font-normal uppercase leading-[19px] text-[#202020] md:text-base"
                   style={{ letterSpacing: "-0.01em" }}
                 >
                   _A Unified Platform
-                </span>
+                </p>
                 <div className="space-y-2 md:space-y-4">
                   <h3
                     className="max-w-[658px] font-britti-sans text-[32px] font-normal leading-[30px] text-[#202020] md:text-[56px] md:leading-[48px]"
