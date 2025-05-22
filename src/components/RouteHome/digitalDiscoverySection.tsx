@@ -135,14 +135,14 @@ export default function DigitalDiscoverySection() {
               'personalised medicine',
               'revolutionising human computer interaction'
             ].map((caption, i) => (
-              <>
-                <p key={i} className="font-britti-sans text-sm font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-base text-center whitespace-nowrap">
+              <React.Fragment key={i}>
+                <p className="font-britti-sans text-sm font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-base text-center whitespace-nowrap">
                   {caption}
                 </p>
                 {i < 2 && (
                   <div className={`h-px bg-[#202020] flex-shrink-0 ${i === 1 ? 'w-32' : 'w-16'}`}></div>
                 )}
-              </>
+              </React.Fragment>
             ))}
           </motion.div>
 
@@ -158,7 +158,7 @@ export default function DigitalDiscoverySection() {
                 caption: 'personalised medicine',
               },
               {
-                src: '/home/dog-sna.png',
+                src: '/home/robot-image.webp',
                 caption: 'revolutionising human computer interaction',
               },
             ].map((item, i) => (
