@@ -2,6 +2,7 @@
 
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 
 const ModernMonitoringPlatform = () => {
   // Create ref for the section to detect when it's in view
@@ -88,7 +89,7 @@ const ModernMonitoringPlatform = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex h-[358px] items-center justify-center bg-black md:h-[447px]"
+      className="flex h-[358px] items-center justify-center bg-[#202020] md:h-[447px]"
     >
       <div className="container_fluid text-white">
         <div className="flex items-center justify-center">
@@ -97,8 +98,14 @@ const ModernMonitoringPlatform = () => {
             initial={{ opacity: 0, scale: 0.1, width: "20px" }}
             className="relative flex items-center justify-center min-h-[40px]"
           >
-            <span className="text-white text-2xl absolute left-0 flex items-center h-full font-normal">
-              [
+            <span className="absolute left-0 flex items-center h-full">
+              <Image
+                src={"/home/square-bracket-left.svg"}
+                alt="Bracket"
+                width={10}
+                height={60}
+                className="flex h-auto w-6 shrink-0 object-fill sm:w-1.5"
+              />
             </span>
 
             <motion.span
@@ -106,11 +113,23 @@ const ModernMonitoringPlatform = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               className="text-center text-base uppercase leading-none tracking-[-0.01em] md:text-xl whitespace-nowrap mx-4"
             >
-              MEET <span className="text-purple-500">THE MODERN MONITORING PLATFORM</span> FOR SCIENTIFIC ENTERPRISES
+              meet the{" "}
+              <span style={{
+                background: "linear-gradient(90deg, #3A23ED -25.94%, #BF5198 51.69%, #FFA231 130.92%)"
+              }} className="!bg-clip-text !text-transparent">
+                modern monitoring platform
+              </span>{" "}
+              for scientific enterprises
             </motion.span>
 
-            <span className="text-white text-2xl absolute right-0 flex items-center h-full font-normal">
-              ]
+            <span className="absolute right-0 flex items-center h-full">
+              <Image
+                src={"/home/square-bracket-right.svg"}
+                alt="Bracket"
+                width={10}
+                height={60}
+                className="flex h-auto w-6 shrink-0 object-fill sm:w-1.5"
+              />
             </span>
           </motion.div>
         </div>
