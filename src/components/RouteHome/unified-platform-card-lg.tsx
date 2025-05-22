@@ -44,6 +44,22 @@ const UnifiedPlatformCardLg = () => {
     }
   };
 
+  const backgroundImageVariants = {
+    hidden: {
+      opacity: 0,
+      y: 60
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.2,
+        ease: [0.6, 0, 0.38, 1],
+        delay: 1.0 // Delay to let cards and lines animate first
+      }
+    }
+  };
+
   return (
     <motion.div
       className="relative"
@@ -54,7 +70,10 @@ const UnifiedPlatformCardLg = () => {
     >
       {/* Background Image */}
       <div className="pt-[280px]">
-        <div className="relative z-10 hidden w-full md:h-[320px] lg:block xl:h-[400px]">
+        <motion.div
+          className="relative z-10 hidden w-full md:h-[320px] lg:block xl:h-[400px]"
+          variants={backgroundImageVariants}
+        >
           <Image
             src="/unified-bg-bottom.png"
             alt="unified-bg-bottom"
@@ -62,7 +81,7 @@ const UnifiedPlatformCardLg = () => {
             className="xl:object-center"
             priority
           />
-        </div>
+        </motion.div>
       </div>
 
       {/* Dynamic Cards */}

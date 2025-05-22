@@ -1,8 +1,27 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import PrimaryButton from "../ui/primary-button";
 import { infraData, InfraItem } from "./data/infraData";
 import Image from "next/image";
 
 const InfrastructureReview = () => {
+  // Animation variant for title fade-in
+  const titleVariants = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.6, 0, 0.38, 1]
+      }
+    }
+  };
+
+
+
   return (
     <section>
       <div className="mx-auto max-w-[1440px]">
@@ -13,11 +32,17 @@ const InfrastructureReview = () => {
           >
             <div className={`${index === 0 ? "p-4" : ""}`}>
               {index === 0 && (
-                <h4 className="mb-10 max-w-[580px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-foreground md:text-[40px] md:leading-[38px] xl:mb-0">
-                  Infrastructure & Failure Prevention Services: Review the
+                <motion.h4
+                  className="mb-10 max-w-[580px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-foreground md:text-[40px] md:leading-[38px] xl:mb-0"
+                  variants={titleVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
+                  Infrastructure & Failure Prevention Services: review the
                   efficiency of your current setup and discover any actionable
                   bottlenecks
-                </h4>
+                </motion.h4>
               )}
             </div>
 
@@ -52,9 +77,15 @@ const InfrastructureReview = () => {
                   </div>
                   <div className="flex flex-col items-start justify-between gap-4 pb-0 pt-4 md:flex-row md:gap-0 md:pb-4">
                     <div className="space-y-2">
-                      <h4 className="max-w-[490px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-foreground md:text-[40px] md:leading-[38px]">
+                      <motion.h4
+                        className="max-w-[490px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-foreground md:text-[40px] md:leading-[38px]"
+                        variants={titleVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.3 }}
+                      >
                         {item.title}
-                      </h4>
+                      </motion.h4>
                       <p className="max-w-[490px] font-britti-sans text-sm font-normal leading-[17px] text-foreground md:text-base">
                         {item.description}
                       </p>

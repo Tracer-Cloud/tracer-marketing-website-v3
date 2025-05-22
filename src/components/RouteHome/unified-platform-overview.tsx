@@ -1,9 +1,29 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import PrimaryButton from "@/components/ui/primary-button";
 import Image from "next/image";
 import UnifiedPlatformCard from "./unified-platform-card";
 import UnifiedPlatformCardLg from "./unified-platform-card-lg";
 
 const UnifiedPlatformOverview = () => {
+  // Animation variant for the mobile background image rising into place
+  const imageVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.0,
+        ease: [0.6, 0, 0.38, 1],
+        delay: 0.8 // Delay to let cards animate first
+      }
+    }
+  };
+
   return (
     <section>
       <div className="mx-auto max-w-[1440px]">
@@ -46,7 +66,13 @@ const UnifiedPlatformOverview = () => {
 
               <div className="lg:hidden">
                 <UnifiedPlatformCard />
-                <div className="relative h-[280px] w-full lg:hidden [@media(min-width:375px)]:h-[300px]">
+                <motion.div
+                  className="relative h-[280px] w-full lg:hidden [@media(min-width:375px)]:h-[300px]"
+                  variants={imageVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                >
                   <Image
                     src="/unified-bg-bottom-sm.png"
                     alt="unified-bg-bottom"
@@ -54,7 +80,7 @@ const UnifiedPlatformOverview = () => {
                     className=""
                     priority
                   />
-                </div>
+                </motion.div>
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 p-4 sm:hidden">
