@@ -19,7 +19,7 @@ const paragraphVariant = headingVariant;
 // Slide diagonally from top-left into place
 const imageVariant: Variants = {
   hidden: { x: -200, y: -250 },
-  visible: { x: 0, y: 0, transition: { ...animationConfig, duration: 2.2 } },
+  visible: { x: 0, y: -55, transition: { ...animationConfig, duration: 2.2 } },
 };
 
 const linesVariant: Variants = {
@@ -68,9 +68,14 @@ export default function HeroSection() {
   return (
     <section
       key={refreshKey}
-      className="h-[680px] bg-black text-white lg:h-[850px]"
+      className="h-[640px] bg-black text-white lg:h-[800px]"
     >
-      <div className="container_fluid relative flex h-full flex-col items-center justify-center overflow-hidden lg:block">
+      <motion.div
+        className="relative flex h-full flex-col items-center justify-center overflow-hidden lg:block bg-[url(/home/hero-bg-lines.svg)] bg-contain bg-center bg-repeat-y mx-auto max-w-[1440px] w-full"
+        variants={linesVariant}
+        initial="hidden"
+        animate={animate ? 'visible' : 'hidden'}
+      >
 
         {/* HEADINGS */}
         <motion.h1
@@ -113,7 +118,7 @@ export default function HeroSection() {
           variants={imageVariant}
           initial="hidden"
           animate={animate ? 'visible' : 'hidden'}
-          className="absolute left-0 top-[-50px] z-[2] w-full md:bottom-auto md:left-auto md:right-auto md:top-[-80px]"
+          className="absolute left-0 top-[70px] z-[2] w-full md:bottom-auto md:left-auto md:right-auto md:top-[50px]"
         >
           <Image
             src="/home/hero.png"
@@ -124,46 +129,10 @@ export default function HeroSection() {
           />
         </motion.div>
 
-        {/* Gray rectangle in the bottom left that expands when in view */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-[#202020] origin-left z-10"
-          initial={{ width: "20%" }}
-          whileInView={{
-            width: "66.67%",
-            transition: {
-              duration: 1.0,
-              ease: [0.6, 0, 0.38, 1]
-            }
-          }}
-          viewport={{ once: false, amount: 0.8 }}
-        />
 
-        {/* BACKGROUND LINES */}
-        <motion.svg
-          variants={linesVariant}
-          initial="hidden"
-          animate={animate ? 'visible' : 'hidden'}
-          className="absolute left-0 top-0 z-0 flex h-full w-full justify-around"
-          width="1440"
-          height="808"
-          viewBox="0 0 1440 808"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g clipPath="url(#clip0)">
-            <rect width="1440" height="900" />
-            <path d="M151.25 -0.5V915" stroke="#404040" />
-            <path d="M531.25 -0.5V915" stroke="#404040" />
-            <path d="M911.25 -0.5V915" stroke="#404040" />
-            <path d="M1291.25 -0.5V915" stroke="#404040" />
-          </g>
-          <defs>
-            <clipPath id="clip0">
-              <rect width="1440" height="808" fill="white" />
-            </clipPath>
-          </defs>
-        </motion.svg>
-      </div>
+
+
+      </motion.div>
     </section>
   );
 }
