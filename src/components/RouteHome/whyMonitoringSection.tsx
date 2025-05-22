@@ -104,7 +104,7 @@ const WhyMonitoringSection = () => {
           <div className="flex w-full justify-between gap-2 font-chakra-petch text-sm font-normal uppercase tracking-[-0.01em] text-[#202020]">
             <span>the</span>
             <span className="sm:ml-[12%]">tracer</span>
-            <span>difference</span>
+            <span className="pr-6">difference</span>
           </div>
         </div>
       </div>
