@@ -17,7 +17,7 @@ const Footer = () => {
                             <Image src={"/tracker-logo-black.png"} alt="tracker-logo-black" width={140} height={30} className="w-full max-w-[114px]" />
                         </div>
                         <div>
-                            <h4 className="font-britti-sans text-sm font-[400] uppercase leading-[1] text-[#868686]">
+                            <h4 className="font-chakra-petch text-sm font-[400] uppercase leading-[1] text-[#868686]">
                                 Company
                             </h4>
                             <ul className="mt-4 space-y-2 font-britti-sans text-[16px] font-[400] leading-[1] text-c-black md:mt-10 md:text-[20px]">
@@ -39,7 +39,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-britti-sans text-sm font-[400] uppercase leading-[1] text-[#868686]">
+                            <h4 className="font-chakra-petch text-sm font-[400] uppercase leading-[1] text-[#868686]">
                                 Product
                             </h4>
                             <ul className="mt-4 space-y-2 font-britti-sans text-[16px] font-[400] leading-[1] text-c-black md:mt-10 md:text-[20px]">
@@ -66,7 +66,7 @@ const Footer = () => {
 
                     </div>
                     <div onClick={scrollToTop} className="flex shrink-0 cursor-pointer items-center justify-center gap-1 transition-all hover:scale-[1.05] hover:opacity-70">
-                        <p className="font-britti-sans text-sm font-[400] leading-[1.3] text-c-black">
+                        <p className="font-chakra-petch text-sm font-[400] leading-[1.3] text-c-black">
                             BACK TO TOP
                         </p>
                         <Image src={"/platform/arrow-tt.svg"} alt="arrow-tt" width={10} height={10} className="w-full max-w-[7.5px] translate-y-[-1px]" />

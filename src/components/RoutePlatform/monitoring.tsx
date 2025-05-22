@@ -29,10 +29,10 @@ const Monitoring = () => {
                 <div className='w-full flex-col bg-white text-black'>
                     <div className='flex flex-col items-center justify-center gap-12 border-b border-r border-[#E8E8E8] px-4 py-3 md:gap-20 md:p-3'>
                         <div className='flex w-full items-center justify-between'>
-                            <p className='font-britti-sans text-sm font-[400] text-c-black'>
+                            <p className='font-chakra-petch text-sm font-[400] text-c-black'>
                                 01–03
                             </p>
-                            <p className='font-britti-sans text-sm font-[400] text-c-black'>
+                            <p className='font-chakra-petch text-sm font-[400] text-c-black'>
                                 TRACER PERFORMANCE
                             </p>
                         </div>
@@ -56,10 +56,10 @@ const Monitoring = () => {
                 <div className='w-full flex-col bg-white text-black'>
                     <div className='flex flex-col items-center justify-center gap-12 border-x border-b border-[#E8E8E8] px-4 py-3 md:gap-20 md:p-3'>
                         <div className='flex w-full items-center justify-between'>
-                            <p className='font-britti-sans text-sm font-[400] text-c-black'>
+                            <p className='font-chakra-petch text-sm font-[400] text-c-black'>
                                 02–03
                             </p>
-                            <p className='font-britti-sans text-sm font-[400] text-c-black'>
+                            <p className='font-chakra-petch text-sm font-[400] text-c-black'>
                                 TRACER INTELLIGENCE
                             </p>
                         </div>
@@ -83,10 +83,10 @@ const Monitoring = () => {
                 <div className='w-full flex-col bg-white text-black'>
                     <div className='md:gap-31 flex flex-col items-center justify-center gap-12 border-x border-b border-[#E8E8E8] px-4 py-3 md:p-3'>
                         <div className='flex w-full items-center justify-between'>
-                            <p className='font-britti-sans text-sm font-[400] text-c-black'>
+                            <p className='font-chakra-petch text-sm font-[400] text-c-black'>
                                 03–03
                             </p>
-                            <p className='font-britti-sans text-sm font-[400] text-c-black'>
+                            <p className='font-chakra-petch text-sm font-[400] text-c-black'>
                                 TRACER DEBUG
                             </p>
                         </div>

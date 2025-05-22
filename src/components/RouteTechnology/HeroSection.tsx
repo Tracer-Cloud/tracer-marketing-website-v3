@@ -3,10 +3,10 @@ import Image from 'next/image'
 
 function HeroSection() {
   return (
-    <div className="relative mx-auto flex min-h-screen flex-col justify-between bg-[#202020] pt-8">
-      <h1 className="absolute bottom-10 z-30 pl-4 pt-16 font-britti-sans text-[55px] !font-[400] leading-[55px] tracking-[-2px] text-[white] sm:text-[80px] sm:leading-[65px] md:static md:bottom-auto md:font-[600] md:leading-[78px] lg:leading-[88px] xl:text-[90px] xl:leading-[88px]">
-        Extraordinary HPC Performance
-        for Extraordinary Science
+    <div className="relative mx-auto flex min-h-screen w-full flex-col justify-between bg-[#FCFCFC] pt-8">
+      <h1 className="absolute bottom-10 z-30 pl-4 pt-16 font-britti-sans text-[55px] !font-[400] leading-[55px] tracking-[-2px] text-[#202020] sm:text-[80px] sm:leading-[65px] md:static md:bottom-auto md:font-[600] md:leading-[78px] lg:leading-[88px] xl:text-[90px] xl:leading-[88px]">
+        Extraordinary HPC performance <br className='hidden xl:flex' />
+        for extraordinary science
       </h1>
 
       {/* Text box positioned on middle-right of RectangleBox image */}
@@ -25,10 +25,10 @@ function HeroSection() {
       {/* Bottom-left image container */}
       <div className="hidden flex-col md:flex">
         <div
-          className="h-10 w-[80%] bg-[white] md:w-[250px] lg:h-20 xl:w-[309px]"
+          className="h-10 w-[80%] bg-[#202020] md:w-[250px] lg:h-20 xl:w-[309px]"
         />
         <div
-          className="h-80 w-full bg-[white] md:w-[320px] xl:w-[393px]"
+          className="h-80 w-full bg-[#202020] md:w-[320px] xl:w-[393px]"
         />
       </div>
 
