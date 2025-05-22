@@ -158,7 +158,7 @@ const WhyMonitoringSection = () => {
           <div className="flex flex-col-reverse gap-10 md:flex-row md:items-end md:justify-between lg:gap-20">
             <motion.div
               ref={secondImageRef}
-              className="md:w-2/5 lg:w-[453px] overflow-hidden"
+              className="md:w-2/5 lg:w-[453px] overflow-hidden -mt-8"
               initial={{ x: "-25%" }}
               animate={secondImageControls}
             >
@@ -219,10 +219,10 @@ const WhyMonitoringSection = () => {
       </div>
 
       <motion.div
-        className="absolute -bottom-1 left-0 hidden w-[33%] bg-foreground md:block origin-bottom"
-        initial={{ height: "70px" }}
+        className="absolute -bottom-1 left-0 hidden w-[33%] bg-[#202020] md:block origin-bottom"
+        initial={{ height: "50px" }}
         whileInView={{
-          height: "85px",
+          height: "60px",
           transition: {
             duration: 0.8,
             ease: [0.6, 0, 0.38, 1]

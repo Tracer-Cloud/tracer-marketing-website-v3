@@ -168,11 +168,10 @@ export default function DigitalDiscoverySection() {
                 className={`flex flex-col gap-2 ${i === 2 ? 'md:ml-auto md:pr-20' : ''}`}
               >
                 <p className="md:hidden">{item.caption}</p>
-                <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]" style={{ border: 'none' }}>
-                  {/* Background block that blends with the background */}
+                <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]">
+                  {/* Background block */}
                   <div className="absolute inset-0 bg-[#FCFCFC] z-10"></div>
-
-                  {/* Mask that slides away to reveal the image */}
+                  {/* Mask reveal */}
                   <motion.div
                     className="absolute inset-0 bg-[#FCFCFC] z-30 origin-bottom"
                     initial={{ scaleY: 1 }}
@@ -185,11 +184,9 @@ export default function DigitalDiscoverySection() {
                     }}
                     viewport={{ once: false, amount: 0.3 }}
                   />
-
                   {/* Image */}
                   <motion.div
-                    className="relative z-20 border-0 outline-none"
-                    style={{ border: 'none' }}
+                    className="relative z-20"
                     initial={{ opacity: 0.9 }}
                     whileInView={{
                       opacity: 1,
@@ -205,8 +202,7 @@ export default function DigitalDiscoverySection() {
                       alt={item.caption}
                       width={215}
                       height={107}
-                      className="h-auto w-[152px] sm:w-56 md:w-[215px] border-none outline-none"
-                      style={{ border: 'none', outline: 'none' }}
+                      className="h-auto w-[152px] sm:w-56 md:w-[215px]"
                     />
                   </motion.div>
                 </div>
@@ -248,21 +244,21 @@ export default function DigitalDiscoverySection() {
             This blind spot in scientific <br />computing is costing us breakthroughs.
           </p>
         </motion.div>
-
-        {/* Scroll-down arrow - rectangle in the bottom left that expands when in view */}
-        <motion.div
-          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-[#202020] origin-left"
-          initial={{ width: "20%" }}
-          whileInView={{
-            width: "36.75%",
-            transition: {
-              duration: 0.8,
-              ease: [0.6, 0, 0.38, 1]
-            }
-          }}
-          viewport={{ once: false, amount: 0.8 }}
-        />
       </div>
+
+      {/* Bottom-left reveal bar (full-width section, no side margin) */}
+      <motion.div
+        className="absolute bottom-0 left-0 bg-[#202020] origin-left h-[60px] md:h-[90px] z-10"
+        initial={{ width: "20vw" }}
+        whileInView={{
+          width: "36.75vw",
+          transition: {
+            duration: 0.8,
+            ease: [0.6, 0, 0.38, 1]
+          }
+        }}
+        viewport={{ once: false, amount: 0.8 }}
+      />
     </section>
-  );
+);
 }
