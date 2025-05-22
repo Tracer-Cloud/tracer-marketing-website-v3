@@ -89,7 +89,7 @@ const ModernMonitoringPlatform = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex h-[358px] items-center justify-center bg-black md:h-[447px]"
+      className="flex h-[180px] items-center justify-center bg-[#202020] md:h-[220px] pt-32 md:pt-40 pb-24 md:pb-32"
     >
       <div className="container_fluid text-white">
         <div className="flex items-center justify-center">

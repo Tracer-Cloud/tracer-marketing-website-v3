@@ -26,11 +26,11 @@ const AboutTracer = () => {
   });
 
   return (
-    <section ref={sectionRef} className="bg-foreground pt-16 pb-8 md:pt-24 md:pb-16 relative overflow-hidden">
+    <section ref={sectionRef} className="bg-[#202020] pt-16 pb-40 md:pt-24 md:pb-48 relative overflow-hidden">
       <div className="container_fluid flex items-center justify-center">
-        <div className="w-full max-w-[398px] relative mt-[-40px] flex items-center justify-center min-h-[200px]">
+        <div className="w-full max-w-[398px] relative mt-[-80px] flex items-center justify-center min-h-[240px] px-4">
           <motion.p
-            className="w-full text-center font-britti-sans text-sm font-normal text-background md:text-base"
+            className="w-full text-center font-britti-sans text-sm font-normal text-[#FCFCFC] md:text-base"
             style={{ y: yPosition }} // Apply scroll-based movement using state
         >
           Tracer combines cutting-edge technological advances with the deep

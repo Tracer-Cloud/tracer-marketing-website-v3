@@ -125,18 +125,21 @@ const WhyMonitoringSection = () => {
 
         <div className="flex flex-col gap-14 pt-10 md:pt-[220px] lg:gap-[72px] lg:pt-[330px]">
           <div className="flex flex-col gap-10 md:flex-row md:justify-between lg:gap-20">
-            <div className="font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-[#202020] md:max-w-[520px] md:text-2xl lg:text-[32px] px-6">
-              Modern science is going software-first. With AI and digital tools,
-              researchers are moving fast — and becoming one of the largest
-              developer communities. They want
-              <span className="mx-0.5 inline-flex items-center align-middle">
-                <DoubleArrowIcon />
-              </span>
-              flexibility and
-              <span className="mx-0.5 inline-flex items-center align-middle">
-                <EyeIcon />
-              </span>
-              visibility, not no-code shortcuts.
+            <div className="font-britti-sans text-xl font-medium leading-[0.9em] tracking-[-0.02em] text-[#202020] md:max-w-[520px] md:text-2xl lg:text-[32px] px-6">
+              <p className="mb-4">
+                Modern science is going software-first. With AI and digital tools, researchers are moving fast — and becoming one of the largest developer communities.
+              </p>
+              <p>
+                They want
+                <span className="mx-0.5 inline-flex items-center align-middle">
+                  <DoubleArrowIcon />
+                </span>
+                flexibility and
+                <span className="mx-0.5 inline-flex items-center align-middle">
+                  <EyeIcon />
+                </span>
+                visibility, not no-code shortcuts.
+              </p>
             </div>
 
             <motion.div

@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, Variants, useAnimation, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { DualLeftArrowIcon, MonitorIcon } from '../shared/svgs';
 
@@ -53,6 +53,78 @@ const infraVariants: Variants = {
       ease: [0.6, 0, 0.38, 1],
     },
   },
+};
+
+// Custom component for image panels with controlled animation
+const ImagePanel = ({ src, caption, index }: { src: string; caption: string; index: number }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.01 }); // Very small threshold for reset detection
+  const maskControls = useAnimation();
+  const imageControls = useAnimation();
+  const [animationTriggered, setAnimationTriggered] = useState(false);
+
+  useEffect(() => {
+    if (isInView && !animationTriggered) {
+      setAnimationTriggered(true);
+
+      // Start mask animation - will complete regardless of scroll
+      maskControls.start({
+        scaleY: 0,
+        transition: {
+          duration: 0.8,
+          ease: [0.6, 0, 0.38, 1]
+        }
+      });
+
+      // Start image animation - will complete regardless of scroll
+      imageControls.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: [0.6, 0, 0.38, 1]
+        }
+      });
+    } else if (!isInView && animationTriggered) {
+      // Reset animation when completely out of view
+      setAnimationTriggered(false);
+      maskControls.start({ scaleY: 1 });
+      imageControls.start({ opacity: 0.9 });
+    }
+  }, [isInView, animationTriggered, maskControls, imageControls]);
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={panelVariants}
+      className={`flex flex-col gap-2 ${index === 2 ? 'md:ml-auto md:pr-20' : ''}`}
+    >
+      <p className="md:hidden">{caption}</p>
+      <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]">
+        {/* Background block */}
+        <div className="absolute inset-0 bg-[#FCFCFC] z-10"></div>
+        {/* Mask reveal */}
+        <motion.div
+          className="absolute inset-0 bg-[#FCFCFC] z-30 origin-bottom"
+          initial={{ scaleY: 1 }}
+          animate={maskControls}
+        />
+        {/* Image */}
+        <motion.div
+          className="relative z-20"
+          initial={{ opacity: 0.9 }}
+          animate={imageControls}
+        >
+          <Image
+            src={src}
+            alt={caption}
+            width={215}
+            height={107}
+            className="h-auto w-[152px] sm:w-56 md:w-[215px]"
+          />
+        </motion.div>
+      </div>
+    </motion.div>
+  );
 };
 
 export default function DigitalDiscoverySection() {
@@ -162,51 +234,12 @@ export default function DigitalDiscoverySection() {
                 caption: 'revolutionising human computer interaction',
               },
             ].map((item, i) => (
-              <motion.div
+              <ImagePanel
                 key={i}
-                variants={panelVariants}
-                className={`flex flex-col gap-2 ${i === 2 ? 'md:ml-auto md:pr-20' : ''}`}
-              >
-                <p className="md:hidden">{item.caption}</p>
-                <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]">
-                  {/* Background block */}
-                  <div className="absolute inset-0 bg-[#FCFCFC] z-10"></div>
-                  {/* Mask reveal */}
-                  <motion.div
-                    className="absolute inset-0 bg-[#FCFCFC] z-30 origin-bottom"
-                    initial={{ scaleY: 1 }}
-                    whileInView={{
-                      scaleY: 0,
-                      transition: {
-                        duration: 0.8,
-                        ease: [0.6, 0, 0.38, 1]
-                      }
-                    }}
-                    viewport={{ once: false, amount: 0.3 }}
-                  />
-                  {/* Image */}
-                  <motion.div
-                    className="relative z-20"
-                    initial={{ opacity: 0.9 }}
-                    whileInView={{
-                      opacity: 1,
-                      transition: {
-                        duration: 0.8,
-                        ease: [0.6, 0, 0.38, 1]
-                      }
-                    }}
-                    viewport={{ once: false, amount: 0.3 }}
-                  >
-                    <Image
-                      src={item.src}
-                      alt={item.caption}
-                      width={215}
-                      height={107}
-                      className="h-auto w-[152px] sm:w-56 md:w-[215px]"
-                    />
-                  </motion.div>
-                </div>
-              </motion.div>
+                src={item.src}
+                caption={item.caption}
+                index={i}
+              />
             ))}
           </div>
 
