@@ -68,7 +68,7 @@ export default function HeroSection() {
   return (
     <section
       key={refreshKey}
-      className="h-[680px] bg-black text-white lg:h-[850px]"
+      className="h-[643px] bg-[#202020] text-[#FCFCFC] lg:h-[808px]"
     >
       <div className="container_fluid relative flex h-full flex-col items-center justify-center overflow-hidden lg:block">
 
@@ -99,7 +99,7 @@ export default function HeroSection() {
           variants={paragraphVariant}
           initial="hidden"
           animate={animate ? 'visible' : 'hidden'}
-          className="relative z-10 font-chakra-petch text-base lg:absolute lg:bottom-40 lg:left-4"
+          className="relative z-10 font-britti-sans text-base lg:absolute lg:bottom-40 lg:left-4"
         >
           <p className="mt-4 text-sm md:max-w-[453px] md:text-base">
             Tracer combines cutting-edge technological advances with the deep

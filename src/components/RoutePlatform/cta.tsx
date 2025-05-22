@@ -3,24 +3,24 @@ import React from 'react'
 
 const Cta = () => {
     return (
-        <div className='bg-[#FCFCFC] w-full flex text-c-black flex-col items-center justify-center gap-6 md:gap-8'>
-            <div className='w-full max-w-[1440px] px-4 pt-6 md:pt-[64px] md:flex-row flex-col flex items-start md:items-end justify-between'>
+        <div className='flex w-full flex-col items-center justify-center gap-6 bg-[#FCFCFC] text-c-black md:gap-8'>
+            <div className='flex w-full max-w-[1440px] flex-col items-start justify-between px-4 pt-6 md:flex-row md:items-end md:pt-[64px]'>
                 <div className='flex flex-col items-start'>
-                    <p className='font-[400] font-britti-sans uppercase leading-[1] text-[14px] sm:text-[16px] text-c-black'>
+                    <p className='font-chakra-petch text-[14px] font-[400] uppercase leading-[1] text-c-black sm:text-[16px]'>
                         get a personalized demo
                     </p>
-                    <h2 className='mt-4 leading-[0.9] sm:leading-[0.8] font-britti-sans font-[400] text-[32px] md:text-[56px] tracking-tighter text-c-black'>
+                    <h2 className='mt-4 font-britti-sans text-[32px] font-[400] leading-[0.9] tracking-tighter text-c-black sm:leading-[0.8] md:text-[56px]'>
                         Ready to see Tracer <br className='sm:hidden' /> in action?
                     </h2>
                 </div>
-                <button className='cursor-pointer w-full font-britti-sans md:mt-0 mt-6 md:w-fit shrink-0  text-c-black text-sm sm:text-base font-[400] hover:opacity-80 transition-all bg-[#E8E8E8] px-8 h-[48px]'>
+                <button className='mt-6 h-[48px] w-full shrink-0 cursor-pointer bg-[#E8E8E8] px-8 font-britti-sans text-sm font-[400] text-c-black transition-all hover:opacity-80 sm:text-base md:mt-0 md:w-fit'>
                     Talk to an Expert
                 </button>
             </div>
-            <div className='w-full relative h-[200px] sm:h-[330px]'>
-                <div className='bg-[#FCFCFC] h-[45px] sm:h-[54px] w-[112px] sm:w-[458px] absolute top-0 right-0' />
+            <div className='relative h-[200px] w-full sm:h-[330px]'>
+                <div className='absolute right-0 top-0 h-[45px] w-[112px] bg-[#FCFCFC] sm:h-[54px] sm:w-[458px]' />
 
-                <Image src={"/platform/car.webp"} alt='car' width={1500} height={400} className='w-full h-full object-cover' />
+                <Image src={"/platform/car.webp"} alt='car' width={1500} height={400} className='h-full w-full object-cover' />
             </div>
         </div>
     )

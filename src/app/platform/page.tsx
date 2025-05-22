@@ -8,7 +8,7 @@ import YourPartner from "@/components/RoutePlatform/your-partner";
 
 export default function PlatformPage() {
   return (
-    <main className="w-full h-screen">
+    <main className="w-full">
       <Hero />
       <Approach />
       <Monitoring />
