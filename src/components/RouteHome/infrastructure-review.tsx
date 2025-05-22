@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const InfrastructureReview = () => {
   return (
-    <section>
+    <section className="bg-[#FCFCFC] text-[#202020]">
       <div className="mx-auto max-w-[1440px]">
         {infraData.map((item: InfraItem, index: number) => (
           <div
@@ -13,7 +13,7 @@ const InfrastructureReview = () => {
           >
             <div className={`${index === 0 ? "p-4" : ""}`}>
               {index === 0 && (
-                <h4 className="mb-10 max-w-[580px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-foreground md:text-[40px] md:leading-[38px] xl:mb-0">
+                <h4 className="mb-10 max-w-[580px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-background md:text-[40px] md:leading-[38px] xl:mb-0">
                   Infrastructure & Failure Prevention Services: Review the
                   efficiency of your current setup and discover any actionable
                   bottlenecks
@@ -52,15 +52,15 @@ const InfrastructureReview = () => {
                   </div>
                   <div className="flex flex-col items-start justify-between gap-4 pb-0 pt-4 md:flex-row md:gap-0 md:pb-4">
                     <div className="space-y-2">
-                      <h4 className="max-w-[490px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-foreground md:text-[40px] md:leading-[38px]">
+                      <h4 className="max-w-[490px] font-britti-sans text-[24px] font-normal leading-[22px] tracking-[-2%] text-[#202020] md:text-[40px] md:leading-[38px]">
                         {item.title}
                       </h4>
-                      <p className="max-w-[490px] font-britti-sans text-sm font-normal leading-[17px] text-foreground md:text-base">
+                      <p className="max-w-[490px] font-britti-sans text-sm font-normal leading-[17px] text-[#202020] md:text-base">
                         {item.description}
                       </p>
                     </div>
                     <div className="w-[136px] md:w-[147px]">
-                      <PrimaryButton title="Get a Demo" />
+                      <PrimaryButton title="Get a Demo" className="text-[#202020]" />
                     </div>
                   </div>
                 </div>

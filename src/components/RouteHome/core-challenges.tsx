@@ -12,7 +12,7 @@ const ChallengeCard = ({
 }) => {
   return (
     <div className="md:flex">
-      <div className="traking-[-9px] border border-b-0 border-[#404040] font-chakra-petch text-[40px] md:w-44 md:border-0 md:text-center md:text-[112px]">
+      <div className="traking-[-9px] font-chakra-petch border border-b-0 border-[#404040] text-[40px] md:w-44 md:border-0 md:text-center md:text-[112px]">
         <span className="inline-block w-20 border-r border-[#404040] p-2 text-center md:hidden">
           {challenge.number}
         </span>
@@ -62,12 +62,12 @@ const ChallengeCard = ({
 
 const CoreChallengeSection = () => {
   return (
-    <section className="bg-foreground py-6 text-background">
-      <h2 className="mx-auto mb-4 max-w-[1440px] pl-4 text-[clamp(1.25rem,5vw,2rem)] leading-none lg:pl-0">
+    <section className="bg-[#202020] py-6 text-[#FCFCFC]">
+      <h2 className="mx-auto mb-4 max-w-[1440px] !bg-[#202020] pl-4 text-[clamp(1.25rem,5vw,2rem)] leading-none lg:pl-0">
         Most organizations face <br className="block lg:hidden" /> the same core
         challenges
       </h2>
-      <div className="relative mx-auto max-w-[1440px] border-[#404040] px-4 lg:border-y lg:border-l 1440:px-0">
+      <div className="1440:px-0 relative mx-auto max-w-[1440px] border-[#404040] px-4 lg:border-y lg:border-l">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-0">
           {challenges.map((challenge, index) => (
             <ChallengeCard

@@ -3,14 +3,14 @@ import Image from 'next/image'
 
 function HeroSection() {
   return (
-    <div className="relative h-screen mx-auto flex flex-col justify-between pt-8">
-      <h1 className="text-[55px] text-white sm:text-[80px] xl:text-[90px] font-britti-sans font-[800] md:font-[600] z-30 absolute bottom-10 md:static md:bottom-auto tracking-[-2px] leading-[55px] sm:leading-[65px]  md:leading-[78px] xl:leading-[88px] lg:leading-[88px] pt-16 pl-4 text-[#202020]">
+    <div className="relative mx-auto flex min-h-screen flex-col justify-between bg-[#202020] pt-8">
+      <h1 className="absolute bottom-10 z-30 pl-4 pt-16 font-britti-sans text-[55px] !font-[400] leading-[55px] tracking-[-2px] text-[white] sm:text-[80px] sm:leading-[65px] md:static md:bottom-auto md:font-[600] md:leading-[78px] lg:leading-[88px] xl:text-[90px] xl:leading-[88px]">
         Extraordinary HPC Performance
         for Extraordinary Science
       </h1>
 
       {/* Text box positioned on middle-right of RectangleBox image */}
-      <div className="hidden md:block absolute bottom-[4rem] left-[4rem] lg:left-[10rem] xl:left-[15rem] w-[25rem] border border-gray-300 p-2 bg-white z-10">
+      <div className="absolute bottom-[4rem] left-[4rem] z-10 hidden w-[25rem] border border-gray-300 bg-white p-2 md:block lg:left-[10rem] xl:left-[15rem]">
         <span className="text-md text-[#202020]">
           Understanding highly parallelised workloads running on distributed
           supercomputers is very difficult. Tracer combines cutting-edge
@@ -18,25 +18,25 @@ function HeroSection() {
           industries to go from a black box to insights.
         </span>
       </div>
-      <div className="absolute top-20 sm:top-44 inset-0 flex items-center justify-center md:hidden">
+      <div className="absolute inset-0 top-20 flex items-center justify-center sm:top-44 md:hidden">
         <Image src="/technology/traver_foto_mobile.png" alt="traverMobile" width={500} height={400} />
       </div>
 
       {/* Bottom-left image container */}
-      <div className="hidden md:flex flex-col">
+      <div className="hidden flex-col md:flex">
         <div
-          className="w-[80%] md:w-[250px] xl:w-[309px] h-10 lg:h-20 bg-[#1f1f1f]"
+          className="h-10 w-[80%] bg-[white] md:w-[250px] lg:h-20 xl:w-[309px]"
         />
         <div
-          className="w-full md:w-[320px] xl:w-[393px] h-80 bg-[#1f1f1f]"
+          className="h-80 w-full bg-[white] md:w-[320px] xl:w-[393px]"
         />
       </div>
 
       {/* Bottom-right image container */}
       <div className="absolute bottom-0 right-0 hidden md:block">
-        <Image src="/technology/traver_foto.png" alt="Traver" width={800} height={600} className="w-[35rem] lg:w-[45rem] xl:w-[60rem] h-auto" />
+        <Image src="/technology/traver_foto.png" alt="Traver" width={800} height={600} className="h-auto w-[35rem] lg:w-[45rem] xl:w-[60rem]" />
       </div>
-      <div className="absolute inset-0 -z-10 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0 -z-10">
         {[12, 37, 62, 87].map((percent, index) => (
           <div
             key={index}

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const ModernMonitoringPlatform = () => {
   return (
-    <section className="flex h-[358px] items-center justify-center bg-black md:h-[447px]">
+    <section className="flex h-[358px] items-center justify-center bg-[#202020] md:h-[447px]">
       <div className="container_fluid text-white">
         <div className="flex items-center">
           <span className="">
@@ -16,7 +16,9 @@ const ModernMonitoringPlatform = () => {
           </span>{" "}
           <span className="text-center text-base uppercase leading-none tracking-[-0.01em] md:text-xl">
             meet the{" "}
-            <span className="bg-modernMonitoringBg bg-clip-text text-transparent">
+            <span style={{
+              background: "linear-gradient(90deg, #3A23ED -25.94%, #BF5198 51.69%, #FFA231 130.92%)"
+            }} className="!bg-clip-text !text-transparent">
               modern monitoring platform
             </span>{" "}
             for scientific enterprises

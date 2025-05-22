@@ -1,8 +1,8 @@
 const AboutTracer = () => {
   return (
-    <section className="bg-foreground py-32 md:py-40">
+    <section className="bg-[#202020] py-32 md:py-40">
       <div className="container_fluid flex items-center justify-center">
-        <p className="w-full max-w-[398px] text-center font-britti-sans text-sm font-normal text-background md:text-base">
+        <p className="w-full max-w-[398px] text-center font-britti-sans text-sm font-normal text-[#FCFCFC] md:text-base">
           Tracer combines cutting-edge technological advances with the deep
           understanding of scientific industries to give insights into
           enterprises&apos; digital and AI acceleration.

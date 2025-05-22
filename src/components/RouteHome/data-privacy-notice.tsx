@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const DataPrivacyNotice = () => {
   return (
-    <section className="bg-foreground">
+    <section className="bg-[#202020] px-4">
       <div className="container_fluid">
         <div className="py-4 md:py-[88px]">
           <div className="flex flex-col xl:flex-row xl:gap-12">
             <h3
-              className="hidden whitespace-nowrap font-chakra-petch text-[112px] font-normal leading-[104px] text-background md:block"
+              className="font-chakra-petch hidden whitespace-nowrap text-[112px] font-normal leading-[104px] text-foreground md:block"
               style={{ letterSpacing: "-0.09em" }}
             >
               Your data
@@ -17,13 +17,13 @@ const DataPrivacyNotice = () => {
               <div>
                 <div className="hidden md:block">
                   <h3
-                    className="mt-[-20px] font-chakra-petch text-[112px] font-normal leading-[104px] text-background xl:mt-0"
+                    className="font-chakra-petch mt-[-20px] text-[112px] font-normal leading-[104px] text-foreground xl:mt-0"
                     style={{ letterSpacing: "-0.09em" }}
                   >
                     never leaves
                   </h3>
                   <h3
-                    className="mt-[-24px] font-chakra-petch text-[112px] font-normal leading-[104px] tracking-[-9%] text-background"
+                    className="font-chakra-petch mt-[-24px] text-[112px] font-normal leading-[104px] tracking-[-9%] text-foreground"
                     style={{ letterSpacing: "-0.09em" }}
                   >
                     your systems
@@ -31,13 +31,13 @@ const DataPrivacyNotice = () => {
                 </div>
                 <div className="md:hidden">
                   <h3
-                    className="font-chakra-petch text-[40px] font-normal leading-[40px] text-background"
+                    className="font-chakra-petch text-[40px] font-normal leading-[40px] text-foreground"
                     style={{ letterSpacing: "-0.09em" }}
                   >
                     Your data never leaves your systems
                   </h3>
                 </div>
-                <p className="mt-4 max-w-[453px] font-britti-sans text-base font-normal leading-[16px] text-background md:text-xl md:leading-[22px] md:tracking-[2%]">
+                <p className="mt-4 max-w-[453px] font-britti-sans text-base font-normal leading-[16px] text-foreground md:text-xl md:leading-[22px] md:tracking-[2%]">
                   We don’t want to just pass your security checks: Tracer is
                   built with security-by-design
                 </p>
@@ -60,12 +60,12 @@ const DataPrivacyNotice = () => {
                       </div>
                       <div className="space-y-2">
                         <h5
-                          className="font-britti-sans text-xl font-normal leading-[20px] text-background md:text-[32px] md:leading-[30px]"
+                          className="font-britti-sans text-xl font-normal leading-[20px] text-foreground md:text-[32px] md:leading-[30px]"
                           style={{ letterSpacing: "-0.01em" }}
                         >
                           {feature.title}
                         </h5>
-                        <p className="font-britti-sans text-sm font-normal leading-[17px] text-background md:text-base">
+                        <p className="font-britti-sans text-sm font-normal leading-[17px] text-foreground md:text-base">
                           {feature.description}
                         </p>
                       </div>

@@ -35,7 +35,7 @@ const PreLoaderProgress = () => {
 
       <div className="mt-6 flex flex-col items-center">
         <Image
-          src="/tracer-logo.svg"
+          src="/home/tracer-logo.svg"
           alt="Tracer Logo"
           width={123}
           height={29}

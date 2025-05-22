@@ -20,40 +20,41 @@ const NavigationBar = () => {
     };
 
     return (
-        <div className='w-full flex items-center px-4 pt-4 justify-center fixed top-0 left-0 z-[200] text-black'>
-            <div className='w-full max-w-[1408px] bg-[#FCFCFC1A] backdrop-blur-[12px] flex items-center justify-between h-[65px] p-2'>
+        <div className='fixed left-0 top-0 z-[200] flex w-full items-center justify-center px-4 pt-4 text-black'>
+            <div className='flex h-[65px] w-full max-w-[1408px] items-center justify-between bg-[#FCFCFC1A] p-2 backdrop-blur-[12px]'>
+                {/* <div className='flex h-[65px] w-full max-w-[1408px] items-center justify-between bg-[#DEDEDE] p-2 backdrop-blur-[12px]'> */}
                 <Link href={"/"}>
-                    <Image src={"/tracer-logo.png"} alt='tracer-logo.png' width={150} height={50} className='w-full shrink-0 max-w-[123px]' />
+                    <Image src={"/tracer-logo.png"} alt='tracer-logo.png' width={150} height={50} className='w-full max-w-[123px] shrink-0' />
                 </Link>
-                <div className='h-full hidden 800:flex items-center justify-center gap-10'>
-                    <div className='flex items-center justify-center h-full gap-8 font-[400] font-britti-sans text-base text-[#FCFCFC]'>
-                        <Link href={"/technology"} className='hover:text-white/60 transition-all'>
+                <div className='hidden h-full items-center justify-center gap-10 800:flex'>
+                    <div className='flex h-full items-center justify-center gap-8 font-britti-sans text-base font-[400] text-[#FCFCFC]'>
+                        <Link href={"/technology"} className='transition-all hover:text-white/60'>
                             Technology
                         </Link>
-                        <Link href={"/platform"} className='hover:text-white/60 transition-all'>
+                        <Link href={"/platform"} className='transition-all hover:text-white/60'>
                             Platform
                         </Link>
-                        <Link href={"/about"} className='hover:text-white/60 transition-all'>
+                        <Link href={"/about"} className='transition-all hover:text-white/60'>
                             About
                         </Link>
-                        <Link href={"/blog"} className='hover:text-white/60 transition-all'>
+                        <Link href={"/blog"} className='transition-all hover:text-white/60'>
                             Blog
                         </Link>
-                        <Link href={"/resources"} className='hover:text-white/60 transition-all'>
+                        <Link href={"/resources"} className='transition-all hover:text-white/60'>
                             Resources
                         </Link>
                     </div>
                     <button
                         onClick={handleDemoClick}
-                        className='h-full font-britti-sans text-base !font-[400] cursor-pointer bg-[#E8E8E8] flex items-center justify-center text-black px-8'
+                        className='flex h-full cursor-pointer items-center justify-center bg-[#E8E8E8] px-8 font-britti-sans text-base !font-[400] text-black'
                     >
                         Get a Demo
                     </button>
                 </div>
                 <Sheet>
                     <SheetTrigger asChild>
-                        <div className='800:hidden flex items-center justify-center cursor-pointer shrink-0'>
-                            <Image src={"/icons/menu-icon.svg"} alt='icons/menu-icon.svg' width={40} height={30} className='w-full shrink-0 max-w-[36px]' />
+                        <div className='flex shrink-0 cursor-pointer items-center justify-center 800:hidden'>
+                            <Image src={"/icons/menu-icon.svg"} alt='icons/menu-icon.svg' width={40} height={30} className='w-full max-w-[36px] shrink-0' />
                         </div>
                     </SheetTrigger>
                     <SheetContent className="z-[1000] bg-white">
@@ -63,7 +64,7 @@ const NavigationBar = () => {
                             </SheetTitle>
                         </SheetHeader>
                         <div className="grid gap-4 px-4">
-                            <div className='flex items-start justify-center font-britti-sans h-full flex-col gap-4 font-[400] text-base text-c-black'>
+                            <div className='flex h-full flex-col items-start justify-center gap-4 font-britti-sans text-base font-[400] text-c-black'>
                                 <Link href={"/technology"} className='hover:text-c-black/40 transition-all'>
                                     Technology
                                 </Link>
@@ -84,7 +85,7 @@ const NavigationBar = () => {
                         <SheetFooter>
                             <button
                                 onClick={handleDemoClick}
-                                className='h-[49px] font-britti-sans !font-[400] cursor-pointer bg-c-black flex items-center justify-center text-off-white px-8'
+                                className='flex h-[49px] cursor-pointer items-center justify-center bg-c-black px-8 font-britti-sans !font-[400] text-off-white'
                             >
                                 Get a Demo
                             </button>

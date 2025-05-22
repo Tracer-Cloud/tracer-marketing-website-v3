@@ -4,23 +4,23 @@ import Link from "next/link";
 
 const DigitalDiscoverySection = () => {
   return (
-    <section id="digitalDiscovery" className="relative overflow-y-clip">
-      <div className="container_fluid bg-[url(/images/not-found-page/bg-lines.svg)] bg-contain bg-center bg-repeat-y pb-20 pt-16 md:pt-8 lg:pb-6">
+    <section id="digitalDiscovery" className="relative overflow-y-clip bg-[#FCFCFC] text-[#202020]">
+      <div className="container_fluid bg-[url(/home/bg-lines.svg)] bg-contain bg-center bg-repeat-y pb-20 pt-16 md:pt-8 lg:pb-6">
         <div className="w-full max-w-[390px]">
-          <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:text-3xl lg:text-[40px]">
+          <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:text-3xl lg:text-[40px]">
             Science has embraced digital discovery
           </h3>
-          <p className="mt-2 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.02em] text-foreground md:text-xl">
+          <p className="mt-2 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.02em] text-[#202020] md:text-xl">
             But the tools have not caught up with the vision.
           </p>
         </div>
         <div className="ml-auto mt-14 max-w-[930px] md:mt-40">
-          <h3 className="font-britti-sans text-xl font-normal leading-none tracking-[-0.01em] text-foreground md:text-2xl lg:text-[32px]">
+          <h3 className="font-britti-sans text-xl font-normal leading-none tracking-[-0.01em] text-[#202020] md:text-2xl lg:text-[32px]">
             AI and digital tools offer unprecedented potential,
           </h3>
           <div className="mt-4">
             <div className="flex flex-col gap-4">
-              <div className="hidden items-center gap-4 font-britti-sans font-normal leading-[1.12em] tracking-[-0.02em] text-foreground md:flex md:text-lg lg:text-xl">
+              <div className="hidden items-center gap-4 font-britti-sans font-normal leading-[1.12em] tracking-[-0.02em] text-[#202020] md:flex md:text-lg lg:text-xl">
                 <p className="inline-flex">from curing cancer</p>
                 <span className="flex h-px max-w-[52px] flex-1 bg-black"></span>
                 <p className="inline-flex">personalised medicine</p>
@@ -29,7 +29,7 @@ const DigitalDiscoverySection = () => {
                   revolutionising human -computer interaction
                 </p>
               </div>
-              <div className="flex flex-col gap-4 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-foreground md:flex-row lg:gap-6">
+              <div className="flex flex-col gap-4 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:flex-row lg:gap-6">
                 <div className="flex flex-col gap-2">
                   <p className="md:hidden">from curing cancer</p>
                   <Image
@@ -66,7 +66,7 @@ const DigitalDiscoverySection = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[34px] font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-foreground md:mt-12 md:max-w-[716px] md:text-2xl lg:text-[32px]">
+          <div className="mt-[34px] font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-[#202020] md:mt-12 md:max-w-[716px] md:text-2xl lg:text-[32px]">
             Yet, the{" "}
             <span className="mx-0.5 inline-flex w-5 align-middle md:w-8">
               <MonitorIcon />
@@ -81,23 +81,23 @@ const DigitalDiscoverySection = () => {
           </div>
         </div>
         <div className="mt-14 max-w-[691px] md:ml-auto md:mt-36 lg:mt-[196px]">
-          <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-foreground md:text-xl md:tracking-[-0.02em]">
+          <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-xl md:tracking-[-0.02em]">
             We canʼt tell where to double down or when we have gone completely
             off track.
           </p>
-          <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
+          <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
             This blind spot in scientific computing is costing us breakthroughs.
           </p>
         </div>
       </div>
 
-      <span className="absolute -top-px right-0 h-[46px] w-[36.75%] bg-foreground md:h-[70px]">
+      <span className="absolute -top-px right-0 h-[46px] w-[36.75%] bg-[#202020] md:h-[70px]">
         <Link
           href={"#digitalDiscovery"}
-          className="ml-2 flex h-9 w-6 items-center justify-center bg-background md:ml-4 md:h-14"
+          className="ml-2 flex h-9 w-6 items-center justify-center bg-[#FCFCFC] md:ml-4 md:h-14"
         >
           <Image
-            src={"/icons/down-arrow.svg"}
+            src={"/home/d-arr.svg"}
             alt="Down arrow"
             width={7.5}
             height={18}
@@ -105,7 +105,7 @@ const DigitalDiscoverySection = () => {
         </Link>
       </span>
 
-      <span className="absolute -bottom-px left-0 h-[46px] w-1/3 bg-foreground sm:w-1/4 lg:h-[95px] xl:w-1/3 min-[1440px]:w-[49%]"></span>
+      <span className="absolute -bottom-px left-0 h-[46px] w-1/3 bg-[#202020] sm:w-1/4 lg:h-[95px] xl:w-1/3 min-[1440px]:w-[49%]"></span>
     </section>
   );
 };
