@@ -58,13 +58,13 @@ const infraVariants: Variants = {
 
 export default function DigitalDiscoverySection() {
   return (
-    <section id="digitalDiscovery" className="relative overflow-hidden bg-[#202020]">
+    <section id="digitalDiscovery" className="relative overflow-y-clip bg-[#FCFCFC] px-4 text-[#202020]">
       <div
         className="
           container_fluid
-          bg-[url(/images/not-found-page/bg-lines.svg)]
+          bg-[url(/home/bg-lines.svg)]
           bg-contain bg-center bg-repeat-y
-          pb-20 pt-4 md:pt-2 lg:pb-6
+          pb-20 pt-16 md:pt-8 lg:pb-40
           relative
         "
       >
@@ -76,10 +76,10 @@ export default function DigitalDiscoverySection() {
           transition={{ duration: 0.5 }}
           className="w-full max-w-[390px] relative z-20 mt-0 md:mt-0"
         >
-          <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:text-3xl lg:text-[40px]">
+          <h3 className="font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:text-3xl lg:text-[40px]">
             Science has embraced digital discovery
           </h3>
-          <p className="mt-2 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.02em] text-foreground md:text-xl">
+          <p className="mt-2 font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.02em] text-[#202020] md:text-xl">
             But the tools have not caught up with the vision.
           </p>
         </motion.div>
@@ -96,8 +96,8 @@ export default function DigitalDiscoverySection() {
           <motion.div
             className="
               absolute inset-0
-              bg-[#202020]
-              bg-[url(/images/not-found-page/bg-lines.svg)]
+              bg-[#FCFCFC]
+              bg-[url(/home/bg-lines.svg)]
               bg-contain bg-center bg-repeat-y
               origin-top
             "
@@ -107,7 +107,7 @@ export default function DigitalDiscoverySection() {
           {/* Subheading slides up */}
           <motion.h3
             variants={panelVariants}
-            className="font-britti-sans text-xl font-normal leading-none tracking-[-0.01em] text-foreground md:text-2xl lg:text-[32px]"
+            className="font-britti-sans text-xl font-normal leading-none tracking-[-0.01em] text-[#202020] md:text-2xl lg:text-[32px]"
           >
             AI and digital tools offer unprecedented potential,
           </motion.h3>
@@ -136,11 +136,11 @@ export default function DigitalDiscoverySection() {
                 <p className="md:hidden">{item.caption}</p>
                 <div className="relative overflow-hidden bg-transparent border-0 outline-none h-[107px] sm:h-[140px] md:h-[107px]" style={{ border: 'none' }}>
                   {/* Background block that blends with the background */}
-                  <div className="absolute inset-0 bg-[#202020] z-10"></div>
+                  <div className="absolute inset-0 bg-[#FCFCFC] z-10"></div>
 
                   {/* Mask that slides away to reveal the image */}
                   <motion.div
-                    className="absolute inset-0 bg-[#202020] z-30 origin-bottom"
+                    className="absolute inset-0 bg-[#FCFCFC] z-30 origin-bottom"
                     initial={{ scaleY: 1 }}
                     whileInView={{
                       scaleY: 0,
@@ -183,7 +183,7 @@ export default function DigitalDiscoverySection() {
           {/* Infra text pulls down */}
           <motion.p
             variants={infraVariants}
-            className="mt-8 font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-foreground md:mt-12 md:text-2xl lg:text-[32px]"
+            className="mt-8 font-britti-sans text-xl font-normal leading-none tracking-[-0.02em] text-[#202020] md:mt-12 md:text-2xl lg:text-[32px]"
           >
             Yet, the{' '}
             <span className="inline-flex mx-0.5 w-5 align-middle md:w-8">
@@ -205,17 +205,17 @@ export default function DigitalDiscoverySection() {
           transition={{ duration: 0.5 }}
           className="mt-14 max-w-[691px] md:ml-auto md:mt-36 lg:mt-[196px]"
         >
-          <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-foreground md:text-xl md:tracking-[-0.02em]">
+          <p className="font-britti-sans text-base font-normal leading-[1.12em] tracking-[-0.01em] text-[#202020] md:text-xl md:tracking-[-0.02em]">
             We can&apos;t tell where to double down or when we have gone completely off track.
           </p>
-          <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-foreground md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
+          <p className="mt-2 font-britti-sans text-2xl font-normal leading-[0.9em] tracking-[-0.02em] text-[#202020] md:mt-4 md:pr-12 md:text-3xl lg:text-[40px]">
             This blind spot in scientific computing is costing us breakthroughs.
           </p>
         </motion.div>
 
-        {/* Scroll-down arrow - white rectangle in the bottom left that expands when in view */}
+        {/* Scroll-down arrow - rectangle in the bottom left that expands when in view */}
         <motion.div
-          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-white origin-left"
+          className="absolute bottom-0 left-0 h-[46px] md:h-[70px] bg-[#202020] origin-left"
           initial={{ width: "20%" }}
           whileInView={{
             width: "36.75%",
