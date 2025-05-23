@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, Variants, useAnimation, useInView } from 'framer-motion';
 import Image from 'next/image';
-import { DualLeftArrowIcon, MonitorIcon } from '../shared/svgs';
+import { DualLeftArrowIcon, MonitorIcon } from '../shared/Svgs';
 
 // Variants for coordinated reveal
 const revealVariants: Variants = {

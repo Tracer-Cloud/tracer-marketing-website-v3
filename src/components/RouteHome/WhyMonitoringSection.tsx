@@ -1,9 +1,9 @@
 "use client";
 
-import { DoubleArrowIcon, EyeIcon } from "@/components/shared/svgs";
+import { DoubleArrowIcon, EyeIcon } from "@/components/shared/Svgs";
 import Image from "next/image";
-import WhyMonitoringTitleLarger from "./whyMonitoringTitleLarger";
-import WhyMonitoringTitleMobile from "./whyMonitoringTitleMobile";
+import WhyMonitoringTitleLarger from "./WhyMonitoringTitleLarger";
+import WhyMonitoringTitleMobile from "./WhyMonitoringTitleMobile";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 

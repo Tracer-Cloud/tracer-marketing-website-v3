@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import PrimaryButton from "@/components/ui/primary-button";
+import PrimaryButton from "@/components/ui/PrimaryButton";
 import Image from "next/image";
-import UnifiedPlatformCard from "./unified-platform-card";
-import UnifiedPlatformCardLg from "./unified-platform-card-lg";
+import UnifiedPlatformCard from "./UnifiedPlatformCard";
+import UnifiedPlatformCardLg from "./UnifiedPlatformCardLg";
 
 const UnifiedPlatformOverview = () => {
   // Animation variant for the mobile background image rising into place

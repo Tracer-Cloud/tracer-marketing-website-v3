@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MDXProviderWrapper } from '@/components/mdx-provider';
+import { MDXProviderWrapper } from '@/components/MdxProvider';
 
 interface MDXContentProps {
   slug: string;

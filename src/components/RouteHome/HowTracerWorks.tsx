@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import PrimaryButton from "../ui/primary-button";
+import PrimaryButton from "../ui/PrimaryButton";
 
 const HowTracerWorks = () => {
   // Create ref for the section to detect when it's in view

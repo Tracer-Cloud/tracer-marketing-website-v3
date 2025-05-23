@@ -1,10 +1,10 @@
-import Approach from "@/components/RoutePlatform/approach";
-import Cta from "@/components/RoutePlatform/cta";
-import GainVisibility from "@/components/RoutePlatform/gain-visibility";
-import Hero from "@/components/RoutePlatform/hero";
-import Implementation from "@/components/RoutePlatform/implementation";
-import Monitoring from "@/components/RoutePlatform/monitoring";
-import YourPartner from "@/components/RoutePlatform/your-partner";
+import Approach from "@/components/RoutePlatform/Approach";
+import Cta from "@/components/RoutePlatform/Cta";
+import GainVisibility from "@/components/RoutePlatform/GainVisibility";
+import Hero from "@/components/RoutePlatform/Hero";
+import Implementation from "@/components/RoutePlatform/Implementation";
+import Monitoring from "@/components/RoutePlatform/Monitoring";
+import YourPartner from "@/components/RoutePlatform/YourPartner";
 
 export default function PlatformPage() {
   return (

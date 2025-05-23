@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import PrimaryButton from "../ui/primary-button";
+import PrimaryButton from "../ui/PrimaryButton";
 import { infraData, InfraItem } from "./data/infraData";
 import Image from "next/image";
 
