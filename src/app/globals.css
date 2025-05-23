@@ -216,3 +216,18 @@
     @apply bg-background dark:bg-[#1e1e1e] text-foreground;
   }
 }
+
+@layer utilities {
+  .animate-slow-pulse {
+    animation: slow-pulse 6s ease-in-out infinite;
+  }
+}
+
+@keyframes slow-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
