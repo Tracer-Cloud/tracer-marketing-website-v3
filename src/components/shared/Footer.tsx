@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className="flex w-full flex-col items-end justify-between gap-[72px] pb-3 pt-[32px] md:flex-row md:items-start md:gap-0 md:pb-[168px]">
                     <div className="grid w-full grid-cols-2 gap-12 text-c-black md:w-fit md:grid-cols-[240px_224px_144px] md:gap-0">
                         <div className="col-span-2 md:col-span-1">
-                            <Image src={"/tracker-logo-black.png"} alt="tracker-logo-black" width={140} height={30} className="w-full max-w-[114px]" />
+                            <Image src={"/shared/tracer-logo-black.png"} alt="tracer-logo-black" width={140} height={30} className="w-full max-w-[114px]" />
                         </div>
                         <div>
                             <h4 className="font-chakra-petch text-sm font-[400] uppercase leading-[1] text-[#868686]">

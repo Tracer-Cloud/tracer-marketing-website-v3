@@ -7,7 +7,7 @@ const Cta = () => {
             <div className='flex w-full max-w-[1440px] flex-col items-start justify-between px-4 pt-6 md:flex-row md:items-end md:pt-[64px]'>
                 <div className='flex flex-col items-start'>
                     <p className='font-chakra-petch text-[14px] font-[400] uppercase leading-[1] text-c-black sm:text-[16px]'>
-                        get a personalized demo
+                        get a personalised demo
                     </p>
                     <h2 className='mt-4 font-britti-sans text-[32px] font-[400] leading-[0.9] tracking-tighter text-c-black sm:leading-[0.8] md:text-[56px]'>
                         Ready to see Tracer <br className='sm:hidden' /> in action?

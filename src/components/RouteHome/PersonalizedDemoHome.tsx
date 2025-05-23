@@ -9,7 +9,7 @@ const PersonalizedDemoHome = () => {
             <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end sm:gap-2 xl:gap-0">
               <div className="space-y-2 md:space-y-4">
                 <span className="font-chakra-petch text-sm font-normal uppercase leading-[19px] tracking-[-1%] text-background md:text-base">
-                  get a personalized demo
+                  get a personalised demo {/* Updated spelling */}
                 </span>
                 <h3 className="font-britti-sans text-[32px] font-normal leading-[30px] tracking-[-2%] text-background lg:text-[56px] lg:leading-[56px]">
                   Ready to see Tracer in action?

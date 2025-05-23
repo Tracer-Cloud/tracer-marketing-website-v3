@@ -4,7 +4,7 @@ import { useState } from "react";
 import { faqData, FaqItem } from "./data/faqData";
 
 const Faq = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleIndex = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

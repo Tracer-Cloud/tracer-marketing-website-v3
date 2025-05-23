@@ -6,7 +6,7 @@ function ReadyToSee() {
     <div className='bg-[#FCFCFC] pt-20'>
       <div className='px-4 text-[#202020] sm:px-6 lg:px-2'>
         <div>
-          <span className='font-chakra-petch uppercase'>get a personalized demo</span>
+          <span className='font-chakra-petch uppercase'>get a personalised demo</span>
           <div className='flex w-full flex-col justify-between pt-0 md:pt-6 lg:flex-row'>
             <h2 className='text-[32px] leading-[48px] tracking-tight md:text-[56px]'>Ready to see Tracer in action?</h2>
             <button className='mt-6 h-[48px] w-full shrink-0 cursor-pointer bg-[#E8E8E8] px-8 font-britti-sans text-sm font-[400] text-c-black transition-all hover:opacity-80 sm:text-base md:mt-0 md:w-fit'>

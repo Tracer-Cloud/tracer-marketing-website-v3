@@ -21,7 +21,7 @@ const NavigationBar = () => {
 
     return (
         <div className='w-full flex items-center px-4 pt-4 justify-center fixed top-0 left-0 z-[200] text-black'>
-            <div className='w-full max-w-[1408px] bg-[#FCFCFC1A] backdrop-blur-[12px] flex items-center justify-between h-[65px] p-2'>
+            <div className='w-full max-w-[1408px] bg-[#202020]/50 backdrop-blur-[12px] flex items-center justify-between h-[65px] p-2'>
                 <Link href={"/"}>
                     <Image src={"/shared/tracer-logo.png"} alt='tracer-logo.png' width={150} height={50} className='w-full shrink-0 max-w-[123px]' />
                 </Link>

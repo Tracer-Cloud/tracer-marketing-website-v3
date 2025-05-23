@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { challenges, CoreChallenge } from "./data/core-challenges";
+import { challenges, CoreChallenge } from "./data/CoreChallenges";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
