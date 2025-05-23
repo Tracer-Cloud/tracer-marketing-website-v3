@@ -1,32 +1,58 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useEffect, useRef } from 'react'
+import { motion, useAnimation, useInView } from 'framer-motion'
 
 const Approach = () => {
-    // Animation variants for staggered slide-up effect
+    // Refs and controls for scroll-based animation
+    const containerRef = useRef(null)
+
+    // Detect when cards come into view
+    const cardsVisible = useInView(containerRef, {
+        amount: 0.2, // Trigger when 20% visible (same as original)
+        margin: "0px 0px 0px 0px"
+    })
+
+    const containerControls = useAnimation()
+
+    // Animation variants for staggered slide-up effect from left to right
     const containerVariants = {
-        hidden: {},
+        hidden: {
+            transition: {
+                staggerChildren: 0.3, // Stagger for reverse animation
+            }
+        },
         visible: {
             transition: {
-                staggerChildren: 0.2, // 0.2s delay between each card
+                staggerChildren: 0.3, // Increased delay for more noticeable left-to-right stagger
             }
         }
     }
 
     const cardVariants = {
         hidden: {
-            y: 200, // Start 200px below final position (outside of view)
+            y: 150, // Slightly higher starting position
+            opacity: 0, // Start invisible
         },
         visible: {
             y: 0,
+            opacity: 1, // Fade to full visibility
             transition: {
-                duration: 0.8,
-                ease: [0.6, 0, 0.38, 1], // Custom easing for smooth animation
+                y: { duration: 0.8, ease: [0.6, 0, 0.38, 1] }, // Original duration
+                opacity: { duration: 1.2, ease: "easeOut" } // Even slower fade-in
             }
         }
     }
+
+    // Handle scroll-based animation with reset when out of view
+    useEffect(() => {
+        if (cardsVisible) {
+            containerControls.start("visible")
+        } else {
+            containerControls.start("hidden")
+        }
+    }, [cardsVisible, containerControls])
 
     return (
         <div className='bg-white pt-10 pb-4 md:py-[72px] w-full text-black border-t border-[#E8E8E8] flex items-center relative justify-center flex-col'>
@@ -46,11 +72,11 @@ const Approach = () => {
                     The dawn of AI <br className='sm:hidden ' /> in science <br className='sm:flex hidden' /> requires <br className='sm:hidden ' />a new approach
                 </div>
                 <motion.div
+                    ref={containerRef}
                     className='grid 900:grid-cols-3 bg-white min-h-[120px] w-full gap-4 md:gap-6'
                     variants={containerVariants}
                     initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
+                    animate={containerControls}
                 >
                     <motion.div
                         className='border border-[#E8E8E8] p-4 flex flex-col gap-4 md:gap-[20px] items-start justify-between'

@@ -97,7 +97,7 @@ const Monitoring = () => {
     }, [cardsVisible, pastEnd, containerControls])
     return (
         <div ref={containerRef} className='relative flex w-full flex-col items-center justify-center overflow-hidden'>
-            <Image src={"/platform/monitoting-section-img.png"} alt="monitoting-section-img" width={955} height={800} className="absolute right-0 top-0 w-full max-w-[500px] -translate-y-14 translate-x-32 animate-slow-pulse md:translate-x-20 md:translate-y-0 lg:max-w-[800px] lg:translate-x-32 1300:max-w-[955px] 1300:translate-x-40" />
+            <Image src={"/platform/monitoting-section-img.png"} alt="monitoting-section-img" width={955} height={800} className="absolute right-0 top-0 w-full max-w-[500px] -translate-y-14 translate-x-32 md:translate-x-20 md:translate-y-0 lg:max-w-[800px] lg:translate-x-32 1300:max-w-[955px] 1300:translate-x-40" />
             <div className='z-[10] w-full max-w-[1440px] border-b border-[#E8E8E8]'>
                 {/* Header Section - Transparent background to show background image */}
                 <div className='pt-30 w-full px-4 pb-4 md:px-6 md:pb-12 md:pt-14'>
